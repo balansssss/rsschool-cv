@@ -5,3 +5,173 @@
     margin: 0;
     font-family: 'Manrope', sans-serif;
 }
+
+body {
+    background: url("/img/back.png");
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 81, 162);
+}
+
+hr {
+    display: none;
+}
+
+.person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.person-photo {
+    width: 300px;
+    height: auto;
+    border-radius: 30px;
+    padding: 3px;
+    border: 2px solid rgb(0, 81, 162);
+}
+
+.person-name {
+    margin-top: 20px;
+    font-family: 'Pacifico', cursive;
+    color:rgb(0, 47, 93);
+    font-size: 36px;
+}
+
+.info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 0;
+}
+
+.info-left, .info-right {
+    max-width: 300px;
+}
+
+.info-left {
+    border-right: 2px solid #000000;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.info-right {
+    border-left: 2px solid #000000;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.info-right .blk-list li > ul {
+    list-style-type: circle;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.info-right .blk-list > li {
+    font-weight: 600;
+}
+
+.info-right .blk-list li > ul li {
+    font-weight: 400;
+}
+
+.blk-title {
+    margin-top: 30px;
+    font-family: 'Pacifico', cursive;
+    color:rgb(0, 47, 93);
+    font-size: 24px;
+}
+
+.blk-info {
+    margin-top: 10px;
+}
+
+.blk-list > li {
+    margin-top: 10px;
+}
+
+.blk-social {
+    padding-top: 10px;
+}
+
+.blk-social-link {
+    margin: 0 5px;
+    filter: grayscale(100);
+    transition: .5s;
+}
+
+.blk-social-link:hover {
+    filter: none;
+}
+
+.blk-social-link img {
+    width: 28px;
+    height: 28px;
+}
+
+.blk-social-link:last-child {
+    margin-right: 0;
+}
+
+footer {
+    padding: 5px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .rsschool {
+    width: 80px;
+}
+
+footer > * {
+    margin: 0 15px;
+}
+
+@media screen and (max-width: 630px) {
+
+    * {
+        text-align: center;
+    }
+
+   .info {
+    flex-wrap: wrap;
+    padding-top: 0;
+   } 
+
+   .info-left, .info-right {
+    border: none;
+    padding: 0 5px;
+   }
+
+   .info-right .blk-list li > ul {
+    list-style-type: none;
+   }
+
+   hr {
+    display: block;
+   }
+
+   .info-right ul > ul {
+    margin-left: auto;
+   }
+}
+
+@media screen and (max-width: 330px) {
+    .person-photo {
+        width: 220px;
+    }
+
+    footer > * {
+        margin: 0 8px;
+    }
+}

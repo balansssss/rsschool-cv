@@ -33,3 +33,23 @@ I want to build a successful career in IT and get a position as a senior develop
 - Photoshop
 - Extra:
   - I also had to deal with NoSQL databases, such as MongoDB and Firebase. PHP and Python at the level of data processing from the database and writing small scripts. The skills to work with all technologies were obtained during the performance of real tasks or self-study.
+
+### 🌍 Languages
+
+- Ukrainian Native
+- Russian Native
+- English A1-A2
+
+### 🔗 Social
+
+<p align='center'>
+   <a href="https://t.me/balanssssss">
+       <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/>
+   </a>
+   <a href="https://www.instagram.com/blns.13/">
+       <img src="https://img.shields.io/badge/Instagram-c94691?style=for-the-badge&logo=instagram&logoColor=white"/>
+   </a>
+   <a href="mailto:balansstudio1@gmail.com">
+       <img src="https://img.shields.io/badge/gmail-f91111?style=for-the-badge&logo=gmail&logoColor=white"/>
+   </a>
+</p>

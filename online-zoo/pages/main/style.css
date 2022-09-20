@@ -1,0 +1,56 @@
+header {
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    padding: 0 220px;
+    box-sizing: border-box;
+}
+
+header * {
+    color: #ffffff;
+    font-family: 'Roboto Regular';
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; 
+}
+
+header .logo {
+    width: 82px;
+    height: 52px;
+}
+
+header .navigation {
+    transform: translateX(-188px);
+}
+
+header .navigation ul {
+    display: flex;
+}
+
+header .navigation ul li {
+    margin: 0 29px;
+}
+
+header a {
+    transition: .3s;
+}
+
+header .navigation ul li a.active {
+    display: flex;
+    color: var(--color-orange);
+}
+
+header a:hover {
+    color: var(--color-green);
+}
+
+header a:active {
+    color: var(--color-orange);
+}
+
+header .designed a {
+    line-height: 22px;
+}

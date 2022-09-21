@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Roboto Regular';
 }
 
 a {
@@ -11,7 +12,15 @@ ul {
     list-style-type: none;
 }
 
+button {
+    outline: none;
+    border: none;
+}
+
 :root{
     --color-orange: #F9804B;
     --color-green: #4B9200;
+    --color-yellow: #FFEE2E;
+    --color-darkgrey: #333B41;
+    --gradient-orange: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 }

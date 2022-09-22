@@ -214,7 +214,7 @@ header .designed a {
     color: #ffffff;
 }
 
-.pets .catalog .grid_container aside {
+.pets .catalog .grid_container article {
     border-radius: 5px;
     border: 1px solid var(--color-orange);
     overflow: hidden;
@@ -223,7 +223,7 @@ header .designed a {
     align-self: start;
 }
 
-.pets .catalog .grid_container aside .hidden_description {
+.pets .catalog .grid_container article .hidden_description {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -233,47 +233,47 @@ header .designed a {
     margin-top: -61px;
 }
 
-.pets .catalog .grid_container aside:hover > .hidden_description {
+.pets .catalog .grid_container article:hover > .hidden_description {
     margin-top: 0;
     opacity: 1;
 }
 
-.pets .catalog .grid_container aside:hover > .img_conteiner .animal_img {
+.pets .catalog .grid_container article:hover > .img_conteiner .animal_img {
     transform: scale(1.1);
 }
 
-.pets .catalog .grid_container aside:hover {
+.pets .catalog .grid_container article:hover {
     align-self: end;
 }
 
-.pets .catalog .grid_container aside .hidden_description .title {
+.pets .catalog .grid_container article .hidden_description .title {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
 }
 
-.pets .catalog .grid_container aside .hidden_description .description {
+.pets .catalog .grid_container article .hidden_description .description {
     font-weight: 300;
     font-size: 15px;
     line-height: 18px;
 }
 
-.pets .catalog .grid_container aside .food.banana {
+.pets .catalog .grid_container article .food.banana {
     width: 33px;
     height: 37px;
 }
 
-.pets .catalog .grid_container aside .food.meat {
+.pets .catalog .grid_container article .food.meat {
     width: 48px;
     height: 38px;
 }
 
-.pets .catalog .grid_container aside .img_conteiner {
+.pets .catalog .grid_container article .img_conteiner {
     overflow: hidden;
 }
 
-.pets .catalog .grid_container aside .animal_img {
+.pets .catalog .grid_container article .animal_img {
     width: 366px;
     height: 366px;
     transition: .5s;
@@ -290,4 +290,99 @@ header .designed a {
     right: 0;
     bottom: 1px;
     z-index: 1;
+}
+
+.feed {
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    padding: 69px 220px 100px 220px;
+    color: var(--color-darkgrey);
+}
+
+.feed .wrapper {
+    background: rgba(253, 253, 255, 0.52);
+    border-radius: 20px;
+    padding: 41px 55px 59px 99px;
+}
+
+.feed .wrapper .title {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 58px;
+    text-align: center;
+    color: var(--color-orange);
+    transform: translateX(-20px);
+}
+
+.feed .wrapper .description {
+    margin-top: 30px;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.3px;
+}
+
+.feed .wrapper .text_bold {
+    margin-top: 40px;
+    font-weight: 500;
+    line-height: 21px;
+    font-size: 12px;
+    letter-spacing: 0.25px;
+}
+
+.feed .wrapper .text {
+    margin-top: 5px;
+    line-height: 21px;
+    max-width: 865px;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+}
+
+.feed .wrapper .text a {
+    color: var(--color-darkgrey);
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--color-orange);
+}
+
+.feed .wrapper .howitwork {
+    margin-top: 60px;
+    transform: translateX(-22px);
+}
+
+.feed .wrapper .howitwork .title {
+    font-size: 36px;
+    line-height: 47px;
+    color: var(--color-darkgrey);
+    transform: translateX(0px);
+}
+
+.feed .wrapper .howitwork .widgets {
+    margin-top: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.feed .wrapper .howitwork .widgets .widget {
+    max-width: 168px;
+    margin: 0 15px;
+}
+
+.feed .wrapper .howitwork .arrow {
+    margin: 0 15px;
+    transform: translateY(58px);
+}
+
+.feed .wrapper .howitwork .widgets .widget .widget_img {
+    width: 168px;
+    height: 168px;
+    border-radius: 5px;
+}
+
+.feed .wrapper .howitwork .widgets .widget .widget_description {
+    margin-top: 26px;
+}
+
+.feed .wrapper .howitwork button {
+    display: block;
+    margin: 68px auto 0 auto;
+    color: #ffffff;
 }

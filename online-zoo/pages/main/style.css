@@ -69,7 +69,7 @@ header .designed a {
 
 .main .info {
     text-align: center;
-    padding-top: 166px;
+    margin-top: 166px;
     width: 500px;
     position: relative;
     margin-right: 220px;
@@ -83,7 +83,7 @@ header .designed a {
     position: absolute;
     z-index: 0;
     left: -74px;
-    top: 92px;
+    top: -75px;
 }
 
 .main .info .text {
@@ -101,9 +101,12 @@ header .designed a {
 
 .main .info button {
     margin-top: 60px;
-    background: var(--gradient-orange);
+}
+
+.btn_main {
     text-transform: uppercase;
     font-weight: 500;
+    font-size: 16px;
     border-radius: 25px;
     height: 54px;
     width: 298px;
@@ -165,4 +168,126 @@ header .designed a {
 .backstage .container .text .back_subtitle_description {
     line-height: 22.4px;
     margin-top: 34px;
+}
+
+.pets {
+    padding: 36px 0px 100px 0px;
+    position: relative;
+}
+
+.pets .catalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pets .catalog button.circle {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    margin: 0 18px;
+}
+
+.pets .catalog button.circle img {
+    width: 16px;
+    height: 8px;
+}
+
+.pets .catalog button.circle .left_arrow {
+    transform: rotate(180deg);
+}
+
+.pets .catalog .grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.pets .btn_container {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.pets .btn_container button {
+    color: #ffffff;
+}
+
+.pets .catalog .grid_container aside {
+    border-radius: 5px;
+    border: 1px solid var(--color-orange);
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    align-self: start;
+}
+
+.pets .catalog .grid_container aside .hidden_description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 13px 14px 16px;
+    transition: .5s;
+    opacity: 0;
+    margin-top: -61px;
+}
+
+.pets .catalog .grid_container aside:hover > .hidden_description {
+    margin-top: 0;
+    opacity: 1;
+}
+
+.pets .catalog .grid_container aside:hover > .img_conteiner .animal_img {
+    transform: scale(1.1);
+}
+
+.pets .catalog .grid_container aside:hover {
+    align-self: end;
+}
+
+.pets .catalog .grid_container aside .hidden_description .title {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.pets .catalog .grid_container aside .hidden_description .description {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.pets .catalog .grid_container aside .food.banana {
+    width: 33px;
+    height: 37px;
+}
+
+.pets .catalog .grid_container aside .food.meat {
+    width: 48px;
+    height: 38px;
+}
+
+.pets .catalog .grid_container aside .img_conteiner {
+    overflow: hidden;
+}
+
+.pets .catalog .grid_container aside .animal_img {
+    width: 366px;
+    height: 366px;
+    transition: .5s;
+}
+
+.pets .flower_left {
+    position: absolute;
+    bottom: 1px;
+    z-index: 1;
+}
+
+.pets .flower_right {
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    z-index: 1;
 }

@@ -1,10 +1,15 @@
 // Обработка ссылка в футере, для переброски наверх.
 const logo = document.querySelector('#toTop')
 
-logo.addEventListener('click', e => {
-    e.preventDefault()
-    window.scrollTo(0,0)
-})
+const path = window.location.pathname.includes('/main/')
+
+// Проверка на какой странице необходимо реализовать функционал
+if(path) {
+    logo.addEventListener('click', e => {
+        e.preventDefault()
+        window.scrollTo(0, 0)
+    })
+}
 
 // Валидатор для input-а с типом email
 const inputEmail = document.querySelector('#iEmail')

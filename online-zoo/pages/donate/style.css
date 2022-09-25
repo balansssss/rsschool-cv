@@ -1,0 +1,303 @@
+header {
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    padding: 0 220px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+}
+
+header * {
+    color: #ffffff;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px; 
+}
+
+header .logo,
+footer .logo {
+    width: 82px;
+    height: 52px;
+}
+
+header .navigation {
+    transform: translateX(-188px);
+}
+
+header .navigation ul,
+footer .navigation ul {
+    display: flex;
+}
+
+header .navigation ul li,
+footer .navigation ul li {
+    margin: 0 29px;
+}
+
+header .navigation ul li a.active {
+    display: flex;
+}
+
+header .designed a {
+    line-height: 22px;
+}
+
+.main {
+    background-image: url("../../assets/img/panda_bg.png");
+    width: 100%;
+    height: 390px;
+    margin-top: 76px;
+}
+
+.donation {
+    padding: 40px 224px 180px 220px;
+    background: var(--gradient-lightorange);
+}
+
+.donation .title {
+    color: #ffffff;
+    font-size: 36px;
+    line-height: 47px;
+    font-weight: 400;
+}
+
+.donation .describe {
+    color: #ffffff;
+    line-height: 22px;
+    margin-top: 10px;
+}
+
+.donation .title.donate {
+    font-size: 36px;
+    line-height: 47px;
+    color: var(--color-nativeorange);
+    margin-top: 40px;
+}
+
+.donation .wrapper {
+    padding: 40px 92px 62px 92px;
+    background: rgba(255, 255, 255, 0.52);
+    border-radius: 20px;
+    margin-top: 60px;
+}
+
+.donation .wrapper > * {
+    color: var(--color-darkgrey);
+}
+
+.donation .wrapper .title {
+    color: var(--color-nativeorange);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 58px;
+    text-align: center;
+}
+
+.donation .wrapper .describe {
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 20px;
+}
+
+.donation .wrapper .animal {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donation .wrapper .animal .number {
+    font-size: 72px;
+    line-height: 58px;
+    text-align: center;
+    color: #000000;
+    font-weight: 600;
+}
+
+.donation .wrapper .animal .text {
+    margin-top: 10px;
+}
+
+.donation .wrapper .animal .xicon {
+    width: 14px;
+    height: 14px;
+    margin-left: 11px;
+}
+
+.donation .wrapper .animal .animal_img {
+    width: 268px;
+    height: 198px;
+    margin-left: 64px;
+}
+
+.donation .wrapper form {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.donation .wrapper form .title {
+    line-height: 22px;
+    color: #000000;
+    margin-left: 4px;
+    font-size: 16px;
+    text-align: start;
+}
+
+.donation .wrapper form .amount {
+    color: #929699;
+    border: 1px solid #929699;
+    padding: 16px 9px;
+    background: none;
+    font-size: 16px;
+    line-height: 22px;
+    width: 268px;
+    position: relative;
+}
+
+.donation .wrapper form .amount_symbol {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -20px;
+    font-weight: 600;
+}
+
+.donation .wrapper form .radio_container {
+    margin-top: 25px;
+}
+
+.donation .wrapper form .radio_container input {
+    display: none;
+}
+
+.donation .wrapper form .radio_container label {
+    margin-left: 60px;
+}
+
+.donation .wrapper form .radio_container label:before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    margin-left: -30px;
+    margin-top: 4px;
+    border: 1px solid var(--color-nativeorange);
+    border-radius: 50%;
+}
+
+.donation .wrapper form .radio_container input[type=radio]:checked + label:before {
+    background-color: var(--color-green);
+    border: 1px solid var(--color-green);
+}
+
+.donation .wrapper form .radio_container input[type=radio]:disabled + label:before {
+    filter: grayscale(100%);
+    background: none;
+}
+
+.donation .wrapper form .feed {
+    margin-top: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.donation .wrapper .share {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer {
+    background-color: #111115;
+    padding: 35px 220px 50px 220px;
+}
+
+footer * {
+    color: #FFFFFF;
+}
+
+footer .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .head .subscribe .text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+footer .head .subscribe .input_email {
+    padding: 10px 7px 10px 10px;
+    margin-top: 14px;
+    color: #BDBDBD;
+    background: none;
+    border: 1px solid var(--color-orange);
+    border-radius: 2px;
+    font-size: 16px;
+    line-height: 140%;
+    width: 204px;
+}
+
+footer .head .subscribe .submit {
+    background: var(--color-lightgrey);
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 140%;
+    margin-left: 10px;
+    padding: 10px 39px;
+}
+
+footer .head .subscribe .submit.default {
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+}
+
+footer .donate {
+    margin-top: 36px;
+}
+
+footer .foot {
+    margin-top: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+footer .foot .social li {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+footer .foot .social li:nth-child(1) {
+    margin-top: 0;
+}
+
+footer .foot .social li .icon {
+    width: 26px;
+    height: 26px;
+}
+
+footer .foot .social li .social_link {
+    margin-left: 12px;
+    line-height: 22px;
+}
+
+footer .foot .navigation {
+    transform: translateX(58px);
+}
+
+footer .foot .designed p {
+    font-family: 'Roboto Thin';
+    line-height: 21px;
+    color: #bababa;
+    margin-top: 10px;
+}

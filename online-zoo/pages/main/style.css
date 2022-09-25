@@ -388,8 +388,10 @@ header .designed a {
 }
 
 .testimonials {
-    padding: 140px 220px 204px 220px;
+    padding: 140px 220px 180px 220px;
     text-align: left;
+    position: relative;
+    overflow: hidden;
 }
 
 .testimonials .title {
@@ -404,6 +406,8 @@ header .designed a {
     display: flex;
     justify-content: center;
     text-align: start;
+    overflow-x: auto;
+    max-width: 1193px;
 }
 
 .testimonials .reviews .gradient_wrapper {
@@ -426,7 +430,7 @@ header .designed a {
 .testimonials .reviews .review {
     background-color: var(--color-lightgrey);
     border-radius: 20px;
-    padding: 15px 15px 19px 15px;
+    padding: 15px 15px 19px 14px;
 }
 
 .testimonials .reviews .review .head {
@@ -481,4 +485,57 @@ header .designed a {
 
 .testimonials button {
     margin-top: 30px;
+}
+
+.testimonials .scrollbar_wrapper {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonials .scrollbar_wrapper .scrollbar {
+    overflow: hidden;
+    width: 599px;
+    height: 8px;
+    border-radius: 5px;
+    -webkit-appearance: none;
+    background-color: #F5F7F6;
+}
+
+.testimonials .scrollbar_wrapper .scrollbar::-webkit-slider-runnable-track {
+    height: 8px;
+    -webkit-appearance: none;
+    color: #FE9013;
+}
+
+.testimonials .scrollbar_wrapper .scrollbar::-webkit-slider-thumb {
+    width: 8px;
+    -webkit-appearance: none;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 1em;
+    background: #FE9013;
+    box-shadow: -591px 0 0 585px #FE9013;
+}
+
+/** FF*/
+.testimonials .scrollbar_wrapper .scrollbar::-moz-range-progress {
+    background-color: #FE9013;
+}
+.testimonials .scrollbar_wrapper .scrollbar::-moz-range-track {
+    background-color: #F5F7F6;
+}
+/* IE*/
+.testimonials .scrollbar_wrapper .scrollbar::-ms-fill-lower {
+    background-color: #FE9013;
+}
+
+.testimonials .scrollbar_wrapper .scrollbar::-ms-fill-upper {
+    background-color: #F5F7F6;
+}
+
+.testimonials .back_img {
+    position: absolute;
+    right: 0;
+    bottom: -135px;
 }

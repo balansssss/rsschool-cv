@@ -93,15 +93,6 @@ header .designed a {
     margin-top: 60px;
 }
 
-.btn_main {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 16px;
-    border-radius: 25px;
-    height: 54px;
-    width: 298px;
-}
-
 .backstage {
     padding: 140px 0;
     display: flex;
@@ -462,15 +453,6 @@ header .designed a {
     line-height: 18px;
     overflow-y: hidden;
     height: 306px;
-}
-
-.btn_square {
-    line-height: 22px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    width: 298px;
-    height: 54px;
-    border-radius: 5px;
 }
 
 .testimonials button {

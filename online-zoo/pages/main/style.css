@@ -17,7 +17,8 @@ header * {
     line-height: 22px; 
 }
 
-header .logo {
+header .logo,
+footer .logo {
     width: 82px;
     height: 52px;
 }
@@ -26,29 +27,18 @@ header .navigation {
     transform: translateX(-188px);
 }
 
-header .navigation ul {
+header .navigation ul,
+footer .navigation ul {
     display: flex;
 }
 
-header .navigation ul li {
+header .navigation ul li,
+footer .navigation ul li {
     margin: 0 29px;
-}
-
-header a {
-    transition: .3s;
 }
 
 header .navigation ul li a.active {
     display: flex;
-    color: var(--color-orange);
-}
-
-header a:hover {
-    color: var(--color-green);
-}
-
-header a:active {
-    color: var(--color-orange);
 }
 
 header .designed a {
@@ -538,4 +528,94 @@ header .designed a {
     position: absolute;
     right: 0;
     bottom: -135px;
+}
+
+footer {
+    background-color: #111115;
+    padding: 35px 220px 50px 220px;
+}
+
+footer * {
+    color: #FFFFFF;
+}
+
+footer .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .head .subscribe .text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+footer .head .subscribe .input_email {
+    padding: 10px 7px 10px 10px;
+    margin-top: 14px;
+    color: #BDBDBD;
+    background: none;
+    border: 1px solid var(--color-orange);
+    border-radius: 2px;
+    font-size: 16px;
+    line-height: 140%;
+    width: 204px;
+}
+
+footer .head .subscribe .submit {
+    background: var(--color-lightgrey);
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 140%;
+    margin-left: 10px;
+    padding: 10px 39px;
+}
+
+footer .head .subscribe .submit.default {
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+}
+
+footer .donate {
+    margin-top: 36px;
+}
+
+footer .foot {
+    margin-top: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+footer .foot .social li {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+footer .foot .social li:nth-child(1) {
+    margin-top: 0;
+}
+
+footer .foot .social li .icon {
+    width: 26px;
+    height: 26px;
+}
+
+footer .foot .social li .social_link {
+    margin-left: 12px;
+    line-height: 22px;
+}
+
+footer .foot .navigation {
+    transform: translateX(58px);
+}
+
+footer .foot .designed p {
+    font-family: 'Roboto Thin';
+    line-height: 21px;
+    color: #bababa;
+    margin-top: 10px;
 }

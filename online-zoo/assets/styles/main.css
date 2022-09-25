@@ -6,6 +6,20 @@
 
 a {
     text-decoration: none;
+    transition: .3s;
+}
+
+a:hover {
+    color: var(--color-green);
+}
+
+a:active {
+    color: var(--color-orange);
+}
+
+a:active,
+a.active {
+    color: var(--color-orange);
 }
 
 ul {
@@ -18,6 +32,7 @@ button {
     cursor: pointer;
     transition: .3s;
     background: var(--gradient-orange);
+    font-size: 16px;
 }
 
 button:hover {
@@ -28,11 +43,21 @@ button:active {
     background: var(--color-darkgreen);
 }
 
+input:focus {
+    border: 1px solid var(--color-green)!important;
+    outline: none;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
 :root{
     --color-orange: #F9804B;
     --color-green: #4B9200;
     --color-yellow: #FFEE2E;
     --color-grey: #767474;
+    --color-red: #D31414;
     --color-lightgrey: #F1F3F2;
     --color-darkgrey: #333B41;
     --color-darkorange: #E47209;

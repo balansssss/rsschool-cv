@@ -31,3 +31,41 @@ function emailValidator(input, submit) {
 }
 
 emailValidator(inputEmail, inputSubmit)
+
+// Функционал для progressbar на странице donate
+// Функции, которые возвращают необходимые элементы (селекторы)
+
+function getDivPointChecked() {
+    return document.querySelector('div.point.checked')
+}
+
+function getImgChecked(parent) {
+    return parent.querySelector('img.radio_img')
+}
+
+const pointChecked = getDivPointChecked()
+drawChecked(pointChecked)
+
+// Функция возвращает div-ы с классом поинт
+function getDivPoints() {
+    return document.querySelectorAll('div.progressbar div.point')
+}
+
+// Заменяем стандартный radio на radio:checked
+function drawChecked(point) {
+    const prevPointChecked = getDivPointChecked()
+    prevPointChecked.className = 'point'
+    getImgChecked(prevPointChecked).src = '../../assets/img/donate/radio.png'
+
+    point.className = 'point checked'
+    point.querySelector('img.radio_img').src = '../../assets/img/donate/radio_checked.png'
+}
+
+// Навешиваем событие для всех поинтов на progressbar
+getDivPoints().forEach(e=>{
+    e.addEventListener('click', () => {
+        drawChecked(e)
+    })
+})
+
+

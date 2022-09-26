@@ -41,7 +41,7 @@
             <h2 class="title">Pick and feed a friend</h2>
             <p class="describe">We know the animals bring you joy, and in these extraordinary times, we’re glad.</p>
             <div class="animal">
-                <div>
+                <div class="count">
                     <p class="number">4</p>
                     <p class="text">Panda diet for the day.</p>
                 </div>
@@ -50,12 +50,50 @@
             </div>
             <form>
                 <p class="title">Amount</p>
+                <div class="progressbar">
+                    <div class="line">
+                        <div class="point" >
+                            <img id="p5000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point">
+                            <img id="p2000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point checked">
+                            <img id="p1000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point">
+                            <img id="p500" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point">
+                            <img id="p250" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point">
+                            <img id="p100" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point">
+                            <img id="p50" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point">
+                            <img id="p25" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                    </div>
+                </div>
+                <div class="progressbar_prices">
+                    <p class="price">$5000</p>
+                    <p class="price">$2000</p>
+                    <p class="price">$1000</p>
+                    <p class="price">$500</p>
+                    <p class="price">$250</p>
+                    <p class="price">$100</p>
+                    <p class="price">$50</p>
+                    <p class="price">$25</p>
+                </div>
                 <input class="amount" type="number" placeholder="Another amount">
                 <span class="amount_symbol">$</span>
                 <div class="radio_container">
-                    <input type="radio" id="monthly" value="Monthly">
+                    <input type="radio" id="monthly" name="period" value="Monthly">
                     <label for="monthly">Monthly</label>
-                    <input type="radio" id="once" value="Once">
+                    <input type="radio" id="once" name="period" value="Once" checked>
                     <label for="once">Once</label>
                 </div>
                 <button class="btn_main feed">Feed a friend now</button>

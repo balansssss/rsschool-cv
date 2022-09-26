@@ -54,7 +54,7 @@ header .designed a {
 }
 
 .donation {
-    padding: 40px 224px 180px 220px;
+    padding: 40px 220px 180px 220px;
     background: var(--gradient-lightorange);
 }
 
@@ -67,19 +67,21 @@ header .designed a {
 
 .donation .describe {
     color: #ffffff;
-    line-height: 22px;
+    line-height: 18px;
     margin-top: 10px;
+    font-size: 13px;
+    letter-spacing: -0.3px;
 }
 
 .donation .title.donate {
     font-size: 36px;
     line-height: 47px;
     color: var(--color-nativeorange);
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 .donation .wrapper {
-    padding: 40px 92px 62px 92px;
+    padding: 42px 92px 62px 92px;
     background: rgba(255, 255, 255, 0.52);
     border-radius: 20px;
     margin-top: 60px;
@@ -110,7 +112,11 @@ header .designed a {
     justify-content: center;
 }
 
-.donation .wrapper .animal .number {
+.donation .wrapper .animal .count {
+    transform: translate(-16px, 28px);
+}
+
+.donation .wrapper .animal .count .number {
     font-size: 72px;
     line-height: 58px;
     text-align: center;
@@ -118,24 +124,24 @@ header .designed a {
     font-weight: 600;
 }
 
-.donation .wrapper .animal .text {
+.donation .wrapper .animal .count .text {
     margin-top: 10px;
 }
 
 .donation .wrapper .animal .xicon {
     width: 14px;
     height: 14px;
-    margin-left: 11px;
+    transform: translate(-4px, 16px);
 }
 
 .donation .wrapper .animal .animal_img {
-    width: 268px;
-    height: 198px;
-    margin-left: 64px;
+    width: 283px;
+    height: 242px;
+    margin-left: 60px;
 }
 
 .donation .wrapper form {
-    margin-top: 48px;
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -143,30 +149,44 @@ header .designed a {
     line-height: 22px;
     color: #000000;
     margin-left: 4px;
-    font-size: 16px;
+    font-size: 12px;
     text-align: start;
 }
 
 .donation .wrapper form .amount {
     color: #929699;
     border: 1px solid #929699;
-    padding: 16px 9px;
+    padding: 16px 25px 16px 9px;
     background: none;
     font-size: 16px;
     line-height: 22px;
-    width: 268px;
+    width: 232px;
     position: relative;
+    margin-top: 50px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.donation .wrapper form .amount::-webkit-outer-spin-button,
+.donation .wrapper form .amount::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.donation .wrapper form .amount {
+    -moz-appearance: textfield;
 }
 
 .donation .wrapper form .amount_symbol {
     position: absolute;
-    margin-top: 20px;
+    margin-top: 70px;
     margin-left: -20px;
     font-weight: 600;
 }
 
 .donation .wrapper form .radio_container {
-    margin-top: 25px;
+    margin-top: 21px;
+    transform: translateX(-14px);
 }
 
 .donation .wrapper form .radio_container input {
@@ -174,19 +194,25 @@ header .designed a {
 }
 
 .donation .wrapper form .radio_container label {
-    margin-left: 60px;
+    margin-left: 40px;
+    font-size: 13px;
+}
+
+.donation .wrapper form .radio_container label[for="once"] {
+    margin-left: 70px;
 }
 
 .donation .wrapper form .radio_container label:before {
     content: "";
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     position: absolute;
-    margin-left: -30px;
-    margin-top: 4px;
+    margin-left: -25px;
+    margin-top: 5px;
     border: 1px solid var(--color-nativeorange);
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .donation .wrapper form .radio_container input[type=radio]:checked + label:before {
@@ -203,14 +229,89 @@ header .designed a {
     margin-top: 30px;
     color: #ffffff;
     text-transform: uppercase;
+    transform: translateX(3px);
 }
 
 .donation .wrapper .share {
-    font-size: 16px;
+    font-size: 12.5px;
     line-height: 22px;
     text-align: center;
     margin-top: 30px;
 }
+
+.donation .wrapper form .progressbar {
+    margin-top: 17px;
+    width: 94%;
+    background-color: #404950;
+    border-radius: 2px;
+    padding: 12px 30px;
+}
+
+.donation .wrapper form .progressbar .line {
+    background-color: #72828E;
+    height: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.donation .wrapper form .progressbar .line .point {
+    position: relative;
+    cursor: pointer;
+}
+
+.donation .wrapper form .progressbar .line .point.checked .radio_img {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+}
+
+.donation .wrapper form .progressbar_prices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.donation .wrapper form .progressbar_prices .price {
+    color: var(--color-darkgrey);
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(1) {
+
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(2) {
+    transform: translateX(-15px);
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(3) {
+    transform: translateX(-30px);
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(4) {
+    transform: translateX(-42px);
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(5) {
+    transform: translateX(-42px);
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(6) {
+    transform: translateX(-40px);
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(7) {
+    transform: translateX(-40px);
+}
+
+.donation .wrapper form .progressbar_prices .price:nth-child(8) {
+    transform: translateX(-25px);
+}
+
 
 footer {
     background-color: #111115;

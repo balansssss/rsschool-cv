@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto Regular';
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+}
+
+a:hover {
+    color: var(--color-green);
+}
+
+a:active {
+    color: var(--color-orange);
+}
+
+a:active,
+a.active {
+    color: var(--color-orange);
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    background: var(--gradient-orange);
+    font-size: 16px;
+}
+
+button:hover {
+    background: var(--color-darkorange);
+}
+
+button:active {
+    background: var(--color-darkgreen);
+}
+
+input:focus {
+    border: 1px solid var(--color-green)!important;
+    color: var(--color-green)!important;
+    outline: none;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.btn_main {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 25px;
+    height: 54px;
+    width: 298px;
+}
+
+.btn_square {
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    width: 298px;
+    height: 54px;
+    border-radius: 5px;
+}
+
+:root{
+    --color-orange: #F9804B;
+    --color-nativeorange: #FE9013;
+    --color-green: #4B9200;
+    --color-yellow: #FFEE2E;
+    --color-grey: #767474;
+    --color-red: #D31414;
+    --color-lightgrey: #F1F3F2;
+    --color-darkgrey: #333B41;
+    --color-darkorange: #E47209;
+    --color-darkgreen: #4B9200;
+    --color-graysec: #BDBDBD;
+    --gradient-orange: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    --gradient-lightorange: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    --gradient-pink: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);;
+}

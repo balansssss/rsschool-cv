@@ -208,19 +208,19 @@ header .designed a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 3px 13px 14px 16px;
+    padding: 7px 13px 14px 16px;
     transition: .5s;
-    opacity: 0;
-    margin-top: -61px;
+    transform: translateY(0);
 }
 
 .pets .catalog .grid_container article:hover > .hidden_description {
-    margin-top: 0;
-    opacity: 1;
+    transform: translateY(-60px);
+    color: #ffffff;
 }
 
 .pets .catalog .grid_container article:hover > .img_conteiner .animal_img {
     transform: scale(1.1);
+    filter: brightness(50%);
 }
 
 .pets .catalog .grid_container article:hover {
@@ -256,7 +256,7 @@ header .designed a {
 
 .pets .catalog .grid_container article .animal_img {
     width: 366px;
-    height: 366px;
+    height: 362px;
     transition: .5s;
 }
 
@@ -298,23 +298,22 @@ header .designed a {
     margin-top: 30px;
     font-size: 24px;
     line-height: 29px;
-    letter-spacing: -0.3px;
 }
 
 .feed .wrapper .text_bold {
     margin-top: 40px;
     font-weight: 500;
     line-height: 21px;
-    font-size: 12px;
-    letter-spacing: 0.25px;
+    font-size: 16px;
+    letter-spacing: 0.1px;
 }
 
 .feed .wrapper .text {
-    margin-top: 5px;
+    margin-top: 10px;
     line-height: 21px;
     max-width: 865px;
-    font-size: 12px;
-    letter-spacing: 0.2px;
+    font-size: 15px;
+    letter-spacing: 0.4px;
 }
 
 .feed .wrapper .text a {
@@ -460,7 +459,7 @@ header .designed a {
 }
 
 .testimonials .scrollbar_wrapper {
-    margin-top: 22px;
+    margin-top: 18px;
     display: flex;
     justify-content: center;
 }
@@ -514,7 +513,7 @@ header .designed a {
 
 footer {
     background-color: #111115;
-    padding: 35px 220px 50px 220px;
+    padding: 38px 220px 50px 220px;
 }
 
 footer * {
@@ -575,6 +574,16 @@ footer .foot .social li {
     margin-top: 10px;
     display: flex;
     align-items: center;
+    transition: .5s;
+    cursor: pointer;
+}
+
+footer .foot .social li:hover .social_link {
+    color: var(--color-green);
+}
+
+footer .foot .social li:hover .icon {
+    background-color: var(--color-green);
 }
 
 footer .foot .social li:nth-child(1) {
@@ -582,8 +591,13 @@ footer .foot .social li:nth-child(1) {
 }
 
 footer .foot .social li .icon {
+    background-color: rgba(196, 196, 196, 0.5);
     width: 26px;
     height: 26px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer .foot .social li .social_link {

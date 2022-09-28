@@ -10,14 +10,13 @@ a {
 }
 
 a:hover {
-    color: var(--color-green);
-}
-
-a:active {
     color: var(--color-orange);
 }
 
-a:active,
+a:active {
+    color: var(--color-green);
+}
+
 a.active {
     color: var(--color-orange);
 }

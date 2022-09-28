@@ -489,6 +489,22 @@ header .designed a {
     box-shadow: -591px 0 0 585px #FE9013;
 }
 
+.testimonials .scrollbar_wrapper .scrollbar::-moz-range-runnable-track {
+    height: 8px;
+    -webkit-appearance: none;
+    color: #FE9013;
+}
+
+.testimonials .scrollbar_wrapper .scrollbar::-moz-range-thumb {
+    width: 8px;
+    -webkit-appearance: none;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 1em;
+    background: #FE9013;
+    box-shadow: -591px 0 0 585px #FE9013;
+}
+
 /** FF*/
 .testimonials .scrollbar_wrapper .scrollbar::-moz-range-progress {
     background-color: #FE9013;

@@ -7,6 +7,7 @@ header {
     padding: 0 220px;
     box-sizing: border-box;
     position: absolute;
+    z-index: 2;
 }
 
 header * {
@@ -210,6 +211,10 @@ header .designed a {
     align-self: start;
 }
 
+.pets .catalog .grid_container article:nth-child(5) {
+    display: none;
+}
+
 .pets .catalog .grid_container article .hidden_description {
     display: flex;
     justify-content: space-between;
@@ -271,7 +276,7 @@ header .designed a {
 .pets .flower_left {
     position: absolute;
     bottom: 1px;
-    left: 0;
+    left: -588px;
     z-index: 1;
 }
 
@@ -670,7 +675,7 @@ footer .foot .designed p {
     }
 
     .pets .catalog .grid_container {
-        grid-row-gap: 92px;
+        grid-row-gap: 90px;
     }
 
     .pets .catalog button.circle {
@@ -699,6 +704,14 @@ footer .foot .designed p {
 }
 
 @media screen and (max-width: 1250px) {
+    header {
+        padding: 0 30px;
+    } 
+
+    header .designed {
+        right: 30px;
+    }
+
     .main {
         background-position: center;
     }
@@ -718,4 +731,232 @@ footer .foot .designed p {
     .testimonials .reviews .gradient_wrapper:nth-child(4) {
         display: none;
     }
+
+    .container_img {
+        width: 455px;
+        height: 408px;
+        background-image: url("../../assets/img/bamboo-cap.png");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: cover;
+    }
+
+    .backstage .container .back_img {
+        display: none;
+    }
+
+    .backstage .container .text {
+        margin-left: 30px;
+    }
+
+    .pets .catalog .grid_container article .animal_img {
+        width: 294px;
+        height: 294px;
+    }
+
+    .pets .catalog button.circle.btn_left {
+        margin-right: 250px;
+    }
+
+    .pets .catalog button.circle.btn_right {
+        margin-left: 250px;
+    }
 }
+
+@media screen and (max-width: 1050px) {
+    header .navigation ul li {
+        margin: 0 26px;
+        font-size: 15px;
+    }
+
+    .main {
+        height: 584px;
+        background-size: cover;
+    }
+
+    .main .info {
+        margin-top: 122px;
+        margin-right: 36px;
+    }
+
+    .main .info .circle {
+        width: 367px;
+        height: 367px;
+        left: -8px;
+        top: -53px;
+    }
+
+    .main .info .text {
+        font-size: 85px;
+        line-height: 64px;
+    }
+
+    .main .info button {
+        margin-top: 40px;
+    }
+
+    .backstage {
+        padding: 110px 30px;
+    }
+
+    .backstage .container .text {
+        margin-left: 20px;
+        transform: translate(11px, -11px);
+    }
+
+    .backstage .container .text .back_title {
+        line-height: 59px;  
+    }
+
+    .backstage .container .text .back_subtitle_description {
+        max-width: 445px;
+        line-height: 22px;
+    }
+
+    .pets {
+        padding: 22px 30px 142px 30px;
+    }
+
+    .pets .catalog .grid_container article .hidden_description {
+        padding: 2px 13px 12px 16px;
+    }
+
+    .pets .catalog .grid_container article:nth-child(5) {
+        display: block;
+        order: 5;
+    }
+
+    .pets .catalog .grid_container article:nth-child(3) {
+        order: 4;
+    }
+
+    .pets .catalog .grid_container article:nth-child(4) {
+        display: none;
+    }
+
+    .pets .catalog .grid_container article:nth-child(7) {
+        order: 6;
+    }
+
+    .pets .flower_left {
+        width: 386px;
+        height: 202px;
+        left: -192px;
+    }
+
+    .pets .flower_right {
+        width: 241px;
+        height: 180px;
+    }
+
+    .feed {
+        padding: 30px 30px 49px 30px;
+    }
+
+    .feed .wrapper {
+        padding: 28px 45px 50px 50px;
+    }
+
+    .feed .wrapper .title {
+        transform: none;
+    }
+
+    .feed .wrapper .description {
+        margin-top: 22px;
+    }
+
+    .feed .wrapper .text_bold {
+        margin-top: 20px;
+        max-width: 96%;
+    }
+
+    .feed .wrapper .text {
+        letter-spacing: 0.5px;
+    }
+
+    .feed .wrapper .howitwork {
+        margin-top: 40px;
+        transform: translateX(-2px);
+    }
+
+    .feed .wrapper .howitwork .arrow {
+        transform: translateY(62px);
+    }
+
+    .feed .wrapper .howitwork .widgets .widget .widget_description {
+        line-height: 23px;
+    }
+
+    .feed .wrapper .howitwork button {
+        margin-top: 72px;
+    }
+
+    .testimonials {
+        padding: 100px 25px 140px 25px;
+    }
+
+    .testimonials .reviews {
+        margin-top: 30px;
+    }
+
+    .testimonials .wrapper {
+        margin-left: 10px;
+    }
+
+    .testimonials .reviews .gradient_wrapper {
+        width: 288px;
+        height: 388px;    
+    }
+
+    .testimonials .reviews .review {
+        padding: 12px 15px 38px 14px;
+    }
+
+    .testimonials .reviews .review .head .info .dot {
+        margin: 0px;
+    }
+
+    .testimonials .reviews .review .text {
+        height: 286px;
+    }
+
+    .testimonials .scrollbar_wrapper {
+        margin-top: 20px;
+    }
+
+    .testimonials .scrollbar_wrapper .scrollbar {
+        transform: translateX(-10px);
+        width: 392px;   
+        height: 7px;
+    }
+
+    .testimonials button {
+        margin-top: 52px;
+    }
+
+    .testimonials .back_img {
+        width: 198px;
+        bottom: -88px;
+    }
+
+    footer {
+        padding: 40px 48px 50px 44px;
+    } 
+
+    footer .donate {
+        margin-top: 34px;
+    }
+
+    footer .foot .navigation {
+        transform: translateX(60px);
+    }
+
+    footer .navigation ul li {
+        margin: 0 24px;
+    }
+
+    footer .foot .designed {
+        transform: translateX(28px);
+    }
+}
+

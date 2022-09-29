@@ -2,7 +2,6 @@ header {
     background-color: #000000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 80px;
     width: 100%;
     padding: 0 220px;
@@ -24,7 +23,7 @@ footer .logo {
 }
 
 header .navigation {
-    transform: translateX(-188px);
+    margin-left: 35px;
 }
 
 header .navigation ul,
@@ -41,12 +40,19 @@ header .navigation ul li a.active {
     display: flex;
 }
 
+header .designed {
+    position: absolute;
+    right: 220px;
+}
+
 header .designed a {
     line-height: 22px;
 }
 
 .main {
     background-image: url("../../assets/img/panda.png");
+    background-position: right;
+    background-repeat: no-repeat;
     width: 100%;
     height: 780px;
     display: flex;
@@ -211,11 +217,13 @@ header .designed a {
     padding: 7px 13px 14px 16px;
     transition: .5s;
     transform: translateY(0);
+    background-color: #ffffff;
 }
 
 .pets .catalog .grid_container article:hover > .hidden_description {
     transform: translateY(-60px);
     color: #ffffff;
+    background  : none;
 }
 
 .pets .catalog .grid_container article:hover > .img_conteiner .animal_img {
@@ -263,6 +271,7 @@ header .designed a {
 .pets .flower_left {
     position: absolute;
     bottom: 1px;
+    left: 0;
     z-index: 1;
 }
 
@@ -275,7 +284,11 @@ header .designed a {
 
 .feed {
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
-    padding: 69px 220px 100px 220px;
+    padding-top: 69px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--color-darkgrey);
 }
 
@@ -368,10 +381,15 @@ header .designed a {
 }
 
 .testimonials {
-    padding: 140px 220px 180px 220px;
+    padding-top: 140px;
+    padding-bottom: 180px;
     text-align: left;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .testimonials .title {
@@ -630,4 +648,74 @@ footer .foot .designed p {
     line-height: 21px;
     color: #bababa;
     margin-top: 10px;
+}
+
+@media screen and (max-width: 1599px) {
+
+}
+
+@media screen and (max-width: 1500px) {
+    .backstage .flower {
+        display: none;
+    }
+
+    footer {
+        padding: 38px 120px 50px 120px;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .main .info {
+        margin-right: 150px;
+    }
+
+    .pets .catalog .grid_container {
+        grid-row-gap: 92px;
+    }
+
+    .pets .catalog button.circle {
+        position: absolute;
+    }
+
+    .pets .catalog button.circle.btn_left {
+        margin-right: 320px;
+    }
+
+    .pets .catalog button.circle.btn_right {
+        margin-left: 320px;
+    }
+
+    .feed {
+        padding: 69px 30px 100px 30px;
+    }
+
+    .testimonials {
+        padding: 140px 30px 180px 30px;
+    }
+
+    footer {
+        padding: 38px 30px 50px 30px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .main {
+        background-position: center;
+    }
+
+    .main .info {
+        margin-right: 50px;
+    }
+
+    .backstage {
+        padding: 140px 30px;
+    }
+
+    .pets {
+        padding: 36px 30px 100px 30px;
+    }
+
+    .testimonials .reviews .gradient_wrapper:nth-child(4) {
+        display: none;
+    }
 }

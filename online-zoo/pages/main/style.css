@@ -1029,7 +1029,7 @@ footer .foot .designed p {
     }
 
     .testimonials .reviews .gradient_wrapper {
-        width: 100%;
+        width: 99%;
         height: 130px;
         margin: 7.5px 0;
     }
@@ -1321,7 +1321,7 @@ footer .foot .designed p {
     }
 
     .testimonials {
-        padding: 60px 20px 140px 20px;
+        padding: 60px 20px 80px 20px;
     }
 
     .testimonials .wrapper {
@@ -1333,7 +1333,39 @@ footer .foot .designed p {
     }
 
     .testimonials .reviews .review {
-        padding: 13px 15px 6px 10px;
+        padding: 13px 15px 8px 10px;
     }
 
+    .testimonials .reviews .review .text {
+        margin-top: 8px;
+        margin-left: 6px;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -0.1px;
+    }
+
+    .testimonials .reviews .review .head .info span {
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .testimonials .reviews .gradient_wrapper {
+        height: 106px;
+    }
+
+    .testimonials .scrollbar_wrapper {
+        display: none;
+    }
+
+    .testimonials button {
+        display: block;
+        margin: 29px auto 0 auto;
+        width: 238px;
+    }
+
+    .testimonials .back_img {
+        width: 125px;
+        bottom: -73px;
+        right: -8px;
+    }
 }

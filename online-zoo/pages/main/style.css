@@ -23,6 +23,10 @@ footer .logo {
     height: 52px;
 }
 
+header .logo .logo_small {
+    display: none;
+}
+
 header .navigation {
     margin-left: 35px;
 }
@@ -48,6 +52,27 @@ header .designed {
 
 header .designed a {
     line-height: 22px;
+}
+
+header .hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+header .hamburger .line {
+    height: 2px;
+    width: 18px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: .5s;
+}
+
+header .hamburger:hover .line {
+    background-color: var(--color-orange);
+}
+
+header .hamburger .line:nth-child(2) {
+    margin: 2px 0;
 }
 
 .main {
@@ -369,6 +394,10 @@ header .designed a {
     transform: translateY(58px);
 }
 
+.feed .wrapper .howitwork .arrow_small {
+    display: none;
+}
+
 .feed .wrapper .howitwork .widgets .widget .widget_img {
     width: 168px;
     height: 168px;
@@ -402,6 +431,7 @@ header .designed a {
     line-height: 47px;
     color: var(--color-darkgrey);
     text-align: center;
+    font-weight: 400;
 }
 
 .testimonials .reviews {
@@ -1021,3 +1051,289 @@ footer .foot .designed p {
     }
 }
 
+@media screen and (max-width: 810px) {
+    header {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .navigation {
+        display: none;
+    }
+
+    header .designed {
+        display: none;
+    }
+
+    header .hamburger {
+        display: block;
+    }
+
+    footer {
+        position: relative;
+        padding: 12px 20px
+    }
+
+    footer .head .subscribe {
+        display: none;
+    }
+
+    footer .foot .social {
+        position: absolute;
+        right: 20px;
+        top: 12px;
+    }
+
+    footer .navigation ul li:nth-child(1) {
+        margin-left: 0;
+    }
+
+    footer .foot .social li .social_link {
+        display: none;
+    }
+
+    footer .foot .designed {
+        transform: none;
+    }
+
+    .feed .wrapper .howitwork .arrow {
+        display: none;
+    }
+
+    .feed .wrapper .howitwork .arrow_small {
+        display: block;
+        position: absolute;
+    }
+
+    .feed .wrapper .howitwork .arrow_small.first {
+        margin-right: 210px;
+        margin-top: -16px;
+    }
+
+    .feed .wrapper .howitwork .arrow_small.second {
+        margin-left: 210px;
+        margin-top: -16px;
+    }
+
+    .feed .wrapper .howitwork .widgets .widget {
+        margin: 0 21px;
+    }
+
+    .feed .wrapper .howitwork .widgets .widget:nth-child(1) {
+        margin-left: 0;
+    }
+
+    .feed .wrapper .howitwork .widgets .widget:nth-child(7) {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    header {
+        padding: 2px 20px;
+        height: auto;
+    }
+
+    header .logo {
+        width: auto;
+        height: auto;
+    }
+
+    header .logo .logo_desktop {
+        display: none;
+    }
+
+    header .logo .logo_small {
+        display: block;
+    }
+
+    .main {
+        height: 373px;
+    }
+
+    .main .info {
+        width: 292px;
+        margin-top: 82px;
+        margin-right: 0;
+    }
+
+    .main .info .text {
+        font-size: 54px;
+        line-height: 41px;
+    }
+
+    .main .info .circle {
+        width: 238px;
+        height: 238px;
+        left: -18px;
+        top: -38px;
+    }
+
+    .main .info button {
+        margin-top: 0;
+        transform: translate(-328px, -8px);
+    }
+
+    .pets .catalog .grid_container article .animal_img {
+        width: 285px;
+        height: 285px;
+    }
+
+    .backstage {
+        padding: 60px 20px;
+    }
+
+    .backstage .flower {
+        height: 484px;
+        width: 164px;
+        right: -32px;
+        top: -4px;
+    }
+
+    .backstage .container .text {
+        margin-left: 0;
+        transform: none;
+        max-width: initial;
+    }
+
+    .backstage .container .text .back_title {
+        transform: translateX(4px);
+        max-width: 465px;
+    }
+
+    .backstage .container .text .back_title_description {
+        margin-top: 18px;
+        max-width: 465px;
+    }
+
+    .backstage .container .text .back_subtitle {
+        margin-top: 32px;
+        transform: translateX(4px);
+    }
+
+    .backstage .container .text .back_subtitle_description {
+        margin-top: 18px;
+    }
+
+    .backstage .container .text .back_subtitle_description {
+        max-width: 482px;
+    }
+
+    .pets {
+        padding: 20px 20px 100px 20px;
+    }
+
+    .pets .catalog .grid_container {
+        grid-row-gap: 92px;
+    }
+
+    .pets .catalog button.circle {
+        margin-top: -7px;
+    }
+
+    .pets .catalog .grid_container article .hidden_description .title {
+        font-size: 12.5px;
+        line-height: 17px;
+    }
+
+    .pets .catalog .grid_container article .hidden_description .description {
+        font-size: 11.5px;
+        line-height: 14px;
+    }
+
+    .pets .catalog .grid_container article .hidden_description {
+        padding: 2px 8px 8px 12px;
+    }
+
+    .pets .catalog .grid_container article .food.banana {
+        width: 26px;
+        height: 29px;
+    }
+
+    .pets .catalog .grid_container article .food.meat {
+        width: 37px;
+        height: 29px;
+    }
+
+    .pets .btn_container {
+        margin-top: 60px;
+    }
+
+    .pets .flower_left {
+        left: -252px;
+    }
+
+    .pets .flower_right {
+        width: 175px;
+        height: 131px;
+    }
+
+    .feed {
+        padding: 20px 0;
+    }
+
+    .feed .wrapper {
+        padding: 10px 20px 60px 20px;
+    }
+
+    .feed .wrapper .title {
+        font-size: 42px;
+        line-height: 50px;
+    }
+
+    .feed .wrapper .description {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .feed .wrapper .text_bold {
+        font-size: 16px;
+        line-height: 21px;
+        max-width: 100%;
+    }
+
+    .feed .wrapper .howitwork {
+        margin-top: 28px;
+    }
+
+    .feed .wrapper .howitwork .widgets {
+        margin-top: 20px;
+    }
+
+    .feed .wrapper .howitwork .widgets .widget {
+        max-width: 100%;
+    }
+    
+    .feed .wrapper .howitwork .arrow_small.first {
+        margin-right: 232px;
+    }
+
+    .feed .wrapper .howitwork .arrow_small.second {  
+        margin-left: 185px;
+    }
+
+    .feed .wrapper .howitwork button {
+        margin-top: 40px;
+    }
+
+    .testimonials {
+        padding: 60px 20px 140px 20px;
+    }
+
+    .testimonials .wrapper {
+        margin-left: 0;
+    }
+
+    .testimonials .reviews {
+        margin-top: 23px;
+    }
+
+    .testimonials .reviews .review {
+        padding: 13px 15px 6px 10px;
+    }
+
+}

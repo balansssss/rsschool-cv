@@ -59,3 +59,14 @@ if (pageDonate) {
         })
     })
 }
+
+
+// Переход на страницы по ссылкам в footer
+const footWrapperLinks = document.querySelectorAll('footer .foot .social li')
+
+footWrapperLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        const linkPath = link.querySelector('.social_link').href
+        window.open(linkPath)
+    })
+})

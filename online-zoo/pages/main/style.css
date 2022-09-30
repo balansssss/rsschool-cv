@@ -83,6 +83,7 @@ header .hamburger .line:nth-child(2) {
     height: 780px;
     display: flex;
     justify-content: flex-end;
+    overflow: hidden;
 }
 
 .main * {
@@ -199,6 +200,7 @@ header .hamburger .line:nth-child(2) {
     height: 62px;
     border-radius: 50%;
     margin: 0 18px;
+    z-index: 2;
 }
 
 .pets .catalog button.circle img {
@@ -915,6 +917,7 @@ footer .foot .designed p {
 
     .feed .wrapper .howitwork .widgets .widget .widget_description {
         line-height: 23px;
+        max-width: 160px;
     }
 
     .feed .wrapper .howitwork button {
@@ -1302,6 +1305,7 @@ footer .foot .designed p {
 
     .feed .wrapper .howitwork .widgets {
         margin-top: 20px;
+        margin-left: -8px;
     }
 
     .feed .wrapper .howitwork .widgets .widget {
@@ -1309,11 +1313,11 @@ footer .foot .designed p {
     }
     
     .feed .wrapper .howitwork .arrow_small.first {
-        margin-right: 232px;
+        margin-right: 226px;
     }
 
     .feed .wrapper .howitwork .arrow_small.second {  
-        margin-left: 185px;
+        margin-left: 190px;
     }
 
     .feed .wrapper .howitwork button {
@@ -1367,5 +1371,17 @@ footer .foot .designed p {
         width: 125px;
         bottom: -73px;
         right: -8px;
+    }
+
+    footer .foot {
+        margin-top: 54px;
+    }
+
+    footer .foot .social li {
+        margin-top: 20px;
+    }
+
+    footer .navigation ul li {
+        margin: 0 18.5px;
     }
 }

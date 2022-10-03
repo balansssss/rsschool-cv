@@ -82,11 +82,14 @@ header .hamburger .line:nth-child(2) {
     width: 100%;
     height: 390px;
     margin-top: 76px;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .donation {
     padding: 40px 220px 180px 220px;
     background: var(--gradient-lightorange);
+    overflow: hidden;
 }
 
 .donation .title {
@@ -455,11 +458,70 @@ footer .foot .designed p {
 
 
 @media screen and (max-width: 1599px) {
+    .main {
+        margin-top: 80px;
+    }
 
+    .donation {
+        padding: 40px 30px 30px 30px;
+    }
+
+    .donation > .title {
+        max-width: 90%
+    }
+    
+    .donation .describe {
+        margin-top: 30px;
+    }
+
+    .donation .wrapper {
+        padding: 20px 48px 46px 48px;
+        margin-top: 41px;
+    }
+
+    .donation .wrapper .title {
+        transform: translateX(-7px);
+    }
+
+    .donation .wrapper .describe {
+        margin-top: 10px;
+    }
+
+    .donation .wrapper form {
+        margin-top: 52px;
+    }
+
+    .donation .wrapper form .title {
+        transform: translateX(16px);
+    }
+
+    .donation .wrapper form .progressbar {
+        padding: 12px 9px;
+        transform: translateX(16px);
+    }
+
+    .donation .wrapper form .progressbar .line .point:nth-child(1),
+    .donation .wrapper form .progressbar_prices .price:nth-child(1) {
+        display: none;
+    }
+
+    .donation .wrapper form .progressbar_prices {
+        transform: translateX(-18px);
+        margin-left: 52px;
+    }
+
+    .donation .wrapper form .amount {
+        margin-top: 48px;
+    }
+
+    .donation .wrapper form .feed {
+        margin-top: 32px;
+    }
+
+    
 }
 
 @media screen and (max-width: 1500px) {
-
     footer {
         padding: 38px 120px 50px 120px;
     }
@@ -481,6 +543,10 @@ footer .foot .designed p {
         right: 30px;
     }
 
+    .main {
+        background-position: left -173px top;
+    }
+
 }
 
 @media screen and (max-width: 1050px) {
@@ -490,7 +556,7 @@ footer .foot .designed p {
     }
 
     footer {
-        padding: 40px 48px 50px 44px;
+        padding: 40px 62px 50px 31px;
     } 
 
     footer .donate {
@@ -498,7 +564,7 @@ footer .foot .designed p {
     }
 
     footer .foot .navigation {
-        transform: translateX(60px);
+        transform: translateX(74px);
     }
 
     footer .navigation ul li {
@@ -507,6 +573,11 @@ footer .foot .designed p {
 
     footer .foot .designed {
         transform: translateX(28px);
+    }
+
+    .donation .wrapper form .progressbar_prices {
+        margin-left: 16px;
+        transform: translateX(16px);
     }
 }
 
@@ -596,6 +667,94 @@ footer .foot .designed p {
     footer .navigation ul li {
         margin: 0 18.5px;
     }
+
+    .main {
+        margin-top: 34px;
+        height: 335px;
+        background-position: left -271px top;
+    }
+
+    .donation {
+        padding: 30px 20px 45px 20px;
+    }
+
+    .donation > .title {
+        font-size: 24px;
+        line-height: 29px;
+        max-width: 100%;
+    }
+
+    .donation .describe {
+        margin-top: 20px;
+    }
+
+    .donation .title.donate {
+        margin-top: 30px;
+    }
+
+    .donation .wrapper {
+        padding: 30px 0;
+        margin-top: 30px;
+    }
+
+    .donation .wrapper .title {
+        transform: none;
+    }
+
+    .donation .wrapper .describe {
+        margin-top: 20px;
+        text-align: center;
+    } 
+
+    .donation .wrapper .animal {
+        margin-top: 50px;
+    }
+
+    .donation .wrapper form {
+        margin-top: 45px;
+    }
+
+    .donation .wrapper form .title {
+        transform: translateX(6px);
+    }
+
+    .donation .wrapper form .progressbar {
+        margin-top: 7px;
+        transform: none;
+        width: 88%;
+        padding: 12px 35px;
+    }
+
+    .donation .wrapper form .progressbar_prices {
+        margin: 13px 0 0 54px;
+        transform: translateX(4px);
+    }
+    
+    .donation .wrapper form .progressbar .line .point:nth-child(2),
+    .donation .wrapper form .progressbar_prices .price:nth-child(2),
+    .donation .wrapper form .progressbar .line .point:nth-child(3),
+    .donation .wrapper form .progressbar_prices .price:nth-child(3) {
+        display: none;
+    }
+
+    .donation .wrapper form .amount {
+        width: 145px;
+        padding: 9px 25px 9px 9px;
+        margin-top: 50px;
+    }
+
+    .donation .wrapper form .amount_symbol {
+        margin-top: 60px;
+    }
+
+    .donation .wrapper form .radio_container {
+        margin-top: 32px;
+    }
+
+    .donation .wrapper form .feed {
+        transform: translateX(1px);
+    }
+    
 }
 
 @media screen and (max-width: 625px) {
@@ -670,12 +829,145 @@ footer .foot .designed p {
     footer .navigation ul li {
         margin: 0 14px!important;
     }
+
+    .main {
+        height: 187px;
+        background-position: left -148px top;
+    }
+
+    .donation {
+        padding: 30px 10px 20px 10px;
+    }
+
+    .donation .title.donate,
+    .donation .wrapper .title {
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .donation .wrapper {
+        padding: 20px 0;
+    }
+
+    .donation .wrapper .describe {
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 10px;
+    }
+
+    .donation .wrapper .animal .count {
+        transform: translate(10px, 15px);
+    }
+
+    .donation .wrapper .animal .count .number {
+        font-size: 40.5px;
+        line-height: 32px;
+    }
+
+    .donation .wrapper .animal .count .text {
+        font-size: 9px;
+        line-height: 13px;
+        margin-top: 6px;
+        width: 90px;
+    }
+
+    .donation .wrapper .animal {
+        margin-top: 10px;
+    }
+
+    .donation .wrapper .animal .animal_img {
+        width: 160px;
+        height: 140px;
+        transform: translateX(-10px);
+    }
+
+    .donation .wrapper .animal .xicon {
+        width: 8px;
+        height: 8px;
+        transform: translate(23px, 7px);
+    }
+
+    .donation .wrapper form {
+        margin-top: 5px;
+    }
+
+    .donation .wrapper form .title {
+        transform: translateX(5px);
+    }
+
+    .donation .wrapper form .progressbar {
+        width: 88%;
+        padding: 6px 18px;
+        transform: translateX(5px);
+    }
+
+    .donation .wrapper form .progressbar_prices {
+        width: 88%;
+    }
+
+    .donation .wrapper form .progressbar .line .point {
+        top: -3px;
+    }
+
+    .donation .wrapper form .progressbar .line .point .radio_img {
+        width: 5px;
+        height: 5px;
+    }
+
+    .donation .wrapper form .progressbar .line .point.checked .radio_img {
+        width: 20px;
+        height: 20px;
+        top: -8px;
+        left: -9px;
+    }
+
+    .donation .wrapper form .progressbar_prices .price {
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+    .donation .wrapper form .progressbar_prices {
+        margin: 5px 0 0 36px;
+        transform: translateX(20px);
+    }
+
+    .donation .wrapper form .amount {
+        margin-top: 25px;
+    }
+
+    .donation .wrapper form .amount_symbol {
+        margin-top: 36px;
+    }
+
+    .donation .wrapper form .radio_container {
+        margin-top: 26px;
+    }
+
+    .donation .wrapper form .feed {
+        margin-top: 29px;
+    }
+    
 }
 
-@media screen and (max-width: 490px) { 
+@media screen and (max-width: 375px) { 
+    .donation .wrapper form .title {
+        transform: translateX(-3px);
+    }
 
+    .donation .wrapper form .progressbar {
+        transform: none;
+    }
+
+    .donation .wrapper form .progressbar_prices {
+        transform: translateX(14px);
+    }
 }
 
 @media screen and (max-width: 325px) { 
-
+    .donation .wrapper .share {
+        font-size: 16px;
+        line-height: 22px;
+        transform: translateX(-10px);
+        width: 320px;
+    }
 }

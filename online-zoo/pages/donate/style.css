@@ -319,6 +319,10 @@ header .hamburger .line:nth-child(2) {
     text-transform: uppercase;
 }
 
+.donation .wrapper form .progressbar_prices .price.checked {
+    color: var(--color-orange);
+}
+
 .donation .wrapper form .progressbar_prices .price:nth-child(2) {
     transform: translateX(-15px);
 }

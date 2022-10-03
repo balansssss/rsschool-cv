@@ -23,15 +23,18 @@ function emailValidator(input, submit) {
 emailValidator(inputEmail, inputSubmit)
 
 // Функционал для progressbar на странице donate
-// Функции, которые возвращают необходимые элементы (селекторы)
-
 if (pageDonate) {
+    // Функции, которые возвращают необходимые элементы (селекторы)
     function getDivPointChecked() {
         return document.querySelector('div.point.checked')
     }
 
     function getImgChecked(parent) {
         return parent.querySelector('img.radio_img')
+    }
+
+    function getPointPriceChecked() {
+        return document.querySelector('.donation .progressbar_prices .price.checked')
     }
 
     const pointChecked = getDivPointChecked()
@@ -46,10 +49,16 @@ if (pageDonate) {
     function drawChecked(point) {
         const prevPointChecked = getDivPointChecked()
         prevPointChecked.className = 'point'
+        const pointPriceChecked = getPointPriceChecked()
+        if (pointPriceChecked) {
+            pointPriceChecked.className = 'price'
+        }
         getImgChecked(prevPointChecked).src = '../../assets/img/donate/radio.png'
 
         point.className = 'point checked'
-        point.querySelector('img.radio_img').src = '../../assets/img/donate/radio_checked.png'
+        const img = point.querySelector('img.radio_img')
+        img.src = '../../assets/img/donate/radio_checked.png'
+        document.querySelector(`.donation .progressbar_prices .price[data-img='${img.id}']`).className = 'price checked'
     }
 
     // Навешиваем событие для всех поинтов на progressbar
@@ -57,6 +66,19 @@ if (pageDonate) {
         e.addEventListener('click', () => {
             drawChecked(e)
         })
+    })
+
+    // Реализация для смены checked эле-та в progressbar
+    window.addEventListener('resize', () => {
+        const windowInnerWidth = window.innerWidth
+        let point = pointChecked
+
+        if (windowInnerWidth < 700) {
+            point = document.querySelector('div.progressbar div.point:nth-child(6)')
+        } else {
+            point = pointChecked
+        }
+        drawChecked(point)
     })
 }
 

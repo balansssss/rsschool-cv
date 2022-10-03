@@ -79,6 +79,7 @@ header .hamburger .line:nth-child(2) {
     background-image: url("../../assets/img/panda.png");
     background-position: right;
     background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 780px;
     display: flex;
@@ -1690,5 +1691,12 @@ footer .foot .designed p {
     .main {
         background-position: bottom center;
         background-size: 24em
+    }
+}
+
+
+@media screen and (min-width: 1650px) {
+    .main {
+        background-position: center;
     }
 }

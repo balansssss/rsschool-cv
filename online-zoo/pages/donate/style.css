@@ -975,3 +975,14 @@ footer .foot .designed p {
         width: 320px;
     }
 }
+
+@media screen and (min-width: 1650px) {
+    .donation .wrapper .describe {
+        text-align: center;
+    }
+
+    .donation .wrapper {
+        max-width: 1800px;
+        margin: 60px auto 0 auto;
+    }
+}

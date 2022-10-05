@@ -92,3 +92,25 @@ footWrapperLinks.forEach(link => {
         window.open(linkPath)
     })
 })
+
+
+// Меню
+const butHideMenu = document.querySelector('#hideMenu')
+const butShowMenu = document.querySelector('#hamburger')
+const menuWrapper = document.querySelector('#menuWrapper')
+
+function hideMenu() {
+    document.body.style.overflow = 'auto'
+    menuWrapper.className = 'menu_wrapper'
+}
+
+butShowMenu.addEventListener('click', () => {
+    document.body.style.overflow = 'hidden'
+    menuWrapper.className = 'menu_wrapper active'
+})
+
+butHideMenu.addEventListener('click', hideMenu)
+
+menuWrapper.addEventListener('click', e => {
+    if (e.target === menuWrapper) hideMenu()
+})

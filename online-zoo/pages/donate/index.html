@@ -58,28 +58,28 @@
                 <p class="title">Amount</p>
                 <div class="progressbar">
                     <div class="line">
-                        <div class="point" >
+                        <div class="point" data-amount="5000">
                             <img id="p5000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
-                        <div class="point">
+                        <div class="point" data-amount="2000">
                             <img id="p2000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
-                        <div class="point checked">
+                        <div class="point" data-amount="1000">
                             <img id="p1000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
-                        <div class="point">
+                        <div class="point" data-amount="500">
                             <img id="p500" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
-                        <div class="point">
+                        <div class="point" data-amount="250">
                             <img id="p250" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
-                        <div class="point">
+                        <div class="point checked" data-amount="100">
                             <img id="p100" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
-                        <div class="point">
+                        <div class="point" data-amount="50">
                             <img id="p50" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
-                        <div class="point">
+                        <div class="point" data-amount="25">
                             <img id="p25" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                     <p class="price" data-img="p50">$50</p>
                     <p class="price" data-img="p25">$25</p>
                 </div>
-                <input class="amount" type="number" placeholder="Another amount" min="1" max="99999">
+                <input class="amount" autocomplete="off" id="amount" type="number" placeholder="Another amount" min="1" max="9999" reqiured>
                 <span class="amount_symbol">$</span>
                 <div class="radio_container">
                     <input type="radio" id="monthly" name="period" value="Monthly">
@@ -169,7 +169,7 @@
         </div>
     </footer>
 
-    <div id="menuWrapper" class="menu_wrapper">
+    <div id="menuWrapper" class="menu_wrapper" style="display: none;">
         <div class="menu" id="menu">
             <div class="head">
                 <a href="../main/index.html">
@@ -190,6 +190,7 @@
         </div>
     </div>
 
+    <script src="./script.js"></script>
     <script src="../../scripts/script.js"></script>
 </body>
 </html>

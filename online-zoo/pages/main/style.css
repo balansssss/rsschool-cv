@@ -218,12 +218,42 @@ header .hamburger .line:nth-child(2) {
     transform: rotate(180deg);
 }
 
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-1000px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(1000px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .pets .catalog .grid_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px 30px;
     position: relative;
     z-index: 2;
+}
+
+.pets .catalog .grid_container.slide_left {
+    animation: slideLeft forwards 1s;
+}
+
+.pets .catalog .grid_container.slide_right {
+    animation: slideRight forwards 1s;
 }
 
 .pets .btn_container {
@@ -726,6 +756,7 @@ footer .foot .designed p {
 
     .pets .catalog button.circle.btn_left {
         margin-right: 320px;
+        z-index: 3;
     }
 
     .pets .catalog button.circle.btn_right {

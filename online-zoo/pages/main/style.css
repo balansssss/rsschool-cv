@@ -488,6 +488,20 @@ header .hamburger .line:nth-child(2) {
     padding: 2px;
     width: 268px;
     height: 391px;
+    display: none;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.testimonials .reviews .gradient_wrapper.fade {
+    animation: fade 1s forwards;
 }
 
 .testimonials .reviews .gradient_wrapper:nth-child(1) {
@@ -497,6 +511,20 @@ header .hamburger .line:nth-child(2) {
 .testimonials .reviews .gradient_wrapper:nth-child(4) {
     margin-right: 0;
 }
+
+.testimonials .reviews .gradient_wrapper.visible {
+    display: block;
+}
+
+/*.testimonials .reviews .gradient_wrapper:nth-child(5), 
+.testimonials .reviews .gradient_wrapper:nth-child(6),
+.testimonials .reviews .gradient_wrapper:nth-child(7),
+.testimonials .reviews .gradient_wrapper:nth-child(8),
+.testimonials .reviews .gradient_wrapper:nth-child(9),
+.testimonials .reviews .gradient_wrapper:nth-child(10),
+.testimonials .reviews .gradient_wrapper:nth-child(11) {
+    display: none;
+}*/
 
 .testimonials .reviews .review {
     background-color: var(--color-lightgrey);
@@ -801,7 +829,7 @@ footer .foot .designed p {
         padding: 36px 30px 100px 30px;
     }
 
-    .testimonials .reviews .gradient_wrapper:nth-child(4) {
+    .testimonials .reviews .gradient_wrapper.last_visible {
         display: none;
     }
 
@@ -1066,6 +1094,10 @@ footer .foot .designed p {
 
     .feed .wrapper {
         padding: 28px 20px 50px 20px;
+    }
+
+    .testimonials .scrollbar_wrapper {
+        display: none;
     }
 
     .testimonials .reviews {
@@ -1452,10 +1484,6 @@ footer .foot .designed p {
 
     .testimonials .reviews .gradient_wrapper {
         height: 106px;
-    }
-
-    .testimonials .scrollbar_wrapper {
-        display: none;
     }
 
     .testimonials button {

@@ -36,3 +36,29 @@ function carousel(btn) {
 btnLeftPets.addEventListener('click', e => carousel(e.target))
 btnRightPets.addEventListener('click', e => carousel(e.target))
 
+// Прогрессбар
+const progressbar = document.querySelector('#progressbar')
+const reviews = document.querySelectorAll('.testimonials .reviews .gradient_wrapper')
+let prevNumber = 0
+
+progressbar.addEventListener('change', e => {
+    let lastIndex = 4
+    const firstReview = Number(e.target.value)
+    const lastReview = Number(e.target.value) + lastIndex
+    reviews.forEach(r => {
+        r.classList.remove('visible')
+        r.classList.remove('last_visible')
+    })
+    for (let i = firstReview; i < lastReview; i++) {
+        if (prevNumber > firstReview && i === firstReview) reviews[i].classList.add('fade')
+        if (i === lastReview - 1) {
+            reviews[i].classList.add('last_visible')
+            if (prevNumber < firstReview) {
+                reviews[i].classList.add('fade')
+            }
+        }
+        reviews[i].classList.add('visible')
+    }
+    prevNumber = firstReview
+})
+

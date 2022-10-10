@@ -49,6 +49,7 @@ butShowMenu.addEventListener('click', () => {
     menuWrapper.style.display = 'flex'
     document.body.style.overflow = 'hidden'
     menuWrapper.className = 'menu_wrapper active'
+    menuWrapper.style.top = `${Math.floor(window.scrollY)}px`
 })
 
 butHideMenu.addEventListener('click', hideMenu)

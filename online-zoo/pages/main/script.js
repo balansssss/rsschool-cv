@@ -62,3 +62,30 @@ progressbar.addEventListener('change', e => {
     prevNumber = firstReview
 })
 
+const wrapper = document.querySelector('#popup_wrapper')
+const popupBody = document.querySelector('#popup .body')
+const hidePopup = document.querySelector('#hidePopup')
+
+reviews.forEach(r => {
+    r.addEventListener('click', e => {
+        if (window.innerWidth < 950) {
+            wrapper.classList.add('active')
+            document.body.style.overflow = 'hidden'
+            wrapper.style.top = `${Math.floor(window.scrollY)}px`
+            popupBody.innerHTML = r.outerHTML
+        }
+    })
+})
+
+function hideWrapper() {
+    wrapper.classList.remove('active')
+    wrapper.style.display = 'none'
+    document.body.style.overflow = 'auto'
+    popupBody.innerHTML = ''
+}
+
+hidePopup.addEventListener('click', hideWrapper)
+
+wrapper.addEventListener('click', e => {
+    if (e.target === wrapper) hideWrapper()
+})

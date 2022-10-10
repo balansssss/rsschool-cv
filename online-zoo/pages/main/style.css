@@ -218,12 +218,42 @@ header .hamburger .line:nth-child(2) {
     transform: rotate(180deg);
 }
 
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-1000px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(1000px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .pets .catalog .grid_container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px 30px;
     position: relative;
     z-index: 2;
+}
+
+.pets .catalog .grid_container.slide_left {
+    animation: slideLeft forwards 1s;
+}
+
+.pets .catalog .grid_container.slide_right {
+    animation: slideRight forwards 1s;
 }
 
 .pets .btn_container {
@@ -458,14 +488,24 @@ header .hamburger .line:nth-child(2) {
     padding: 2px;
     width: 268px;
     height: 391px;
+    display: none;
 }
 
-.testimonials .reviews .gradient_wrapper:nth-child(1) {
-    margin-left: 0;
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-.testimonials .reviews .gradient_wrapper:nth-child(4) {
-    margin-right: 0;
+.testimonials .reviews .gradient_wrapper.fade {
+    animation: fade 1s forwards;
+}
+
+.testimonials .reviews .gradient_wrapper.visible {
+    display: block;
 }
 
 .testimonials .reviews .review {
@@ -726,6 +766,7 @@ footer .foot .designed p {
 
     .pets .catalog button.circle.btn_left {
         margin-right: 320px;
+        z-index: 3;
     }
 
     .pets .catalog button.circle.btn_right {
@@ -770,7 +811,7 @@ footer .foot .designed p {
         padding: 36px 30px 100px 30px;
     }
 
-    .testimonials .reviews .gradient_wrapper:nth-child(4) {
+    .testimonials .reviews .gradient_wrapper.last_visible {
         display: none;
     }
 
@@ -1037,6 +1078,10 @@ footer .foot .designed p {
         padding: 28px 20px 50px 20px;
     }
 
+    .testimonials .scrollbar_wrapper {
+        display: none;
+    }
+
     .testimonials .reviews {
         flex-wrap: wrap;
     }
@@ -1061,6 +1106,98 @@ footer .foot .designed p {
 
     footer .foot .navigation {
         transform: translateX(0px); 
+    }
+
+    .popup_wrapper.active {
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000b8;
+        position: absolute;
+        z-index: 11;
+        top: 0;
+        overflow: hidden;
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .popup_wrapper .popup {
+        background-color: #ffffff;
+        padding: 10px 10px 40px 10px;
+        box-sizing: border-box;
+    }
+    
+    .popup_wrapper .popup > .head {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .popup_wrapper .popup .head .exit {
+        color: #FEBDAB;
+        cursor: pointer;
+        transition: .5s;
+        height: fit-content;
+    }
+
+    .popup_wrapper .popup .head .exit:hover,
+    .popup_wrapper .popup .head .exit:active {
+        color: var(--color-orange);
+    }
+
+    .popup_wrapper .popup .gradient_wrapper {
+        background: var(--gradient-pink);
+        border-radius: 20px;
+        padding: 2px;
+        width: 268px;
+        height: 391px;
+        display: block;
+    }
+    
+    .popup_wrapper .popup .review {
+        background-color: var(--color-lightgrey);
+        border-radius: 20px;
+        padding: 15px 15px 19px 14px;
+    }
+    
+    .popup_wrapper .popup .review .head {
+        display: flex;
+    }
+    
+    .popup_wrapper .popup .review .head .icon img {
+        width: 37px;
+        height: 37px;
+    }
+    
+    .popup_wrapper .popup .review .head .info {
+        margin-left: 10px;
+    }
+    
+    .popup_wrapper .popup .review .head .info .name {
+        line-height: 19px;
+        font-weight: 500;
+    }
+    
+    .popup_wrapper .popup .review .head .info .location {
+        color: var(--color-graysec);
+    }
+    
+    .popup_wrapper .popup .review .head .info .dot {
+        color: var(--color-graysec);
+        margin: 0 5px;
+    }
+    
+    .popup_wrapper .popup .review .head .info .day {
+        color: var(--color-graysec);
+    }
+    
+    .popup_wrapper .popup .review .text {
+        margin-top: 10px;
+        color: var(--color-grey);
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 18px;
+        overflow-y: hidden;
+        height: 306px;
     }
 }
 
@@ -1142,6 +1279,60 @@ footer .foot .designed p {
 
     .feed .wrapper .howitwork .widgets .widget:nth-child(7) {
         margin-right: 0;
+    }
+
+    .menu_wrapper.active {
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000b8;
+        position: absolute;
+        z-index: 11;
+        top: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu_wrapper .menu {
+        background-color: #ffffff;
+        width: 90vw;
+        padding: 10px 10px 40px 10px;
+        box-sizing: border-box;
+    }
+    
+    .menu_wrapper .menu .head {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .menu_wrapper .menu .head .logo_menu {
+        cursor: pointer;
+    }
+    
+    .menu_wrapper .menu .head .exit {
+        color: #FEBDAB;
+        cursor: pointer;
+        transition: .5s;
+        height: fit-content;
+    }
+
+    .menu_wrapper .menu .head .exit:hover,
+    .menu_wrapper .menu .head .exit:active {
+        color: var(--color-orange);
+    }
+    
+    .menu_wrapper .menu .navigation {
+        margin-top: 15px;
+    }
+    
+    .menu_wrapper .menu .navigation li {
+        margin-top: 15px;
+    }
+    
+    .menu_wrapper .menu .navigation li a {
+        font-size: 16px;
+        line-height: 22px;
     }
 }
 
@@ -1367,10 +1558,6 @@ footer .foot .designed p {
 
     .testimonials .reviews .gradient_wrapper {
         height: 106px;
-    }
-
-    .testimonials .scrollbar_wrapper {
-        display: none;
     }
 
     .testimonials button {

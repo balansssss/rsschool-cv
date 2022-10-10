@@ -639,6 +639,61 @@ footer .foot .designed p {
     footer .foot .designed {
         transform: none;
     }
+
+    
+    .menu_wrapper.active {
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000b8;
+        position: absolute;
+        z-index: 11;
+        top: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .menu_wrapper .menu {
+        background-color: #ffffff;
+        width: 90vw;
+        padding: 10px 10px 40px 10px;
+        box-sizing: border-box;
+    }
+    
+    .menu_wrapper .menu .head {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .menu_wrapper .menu .head .logo_menu {
+        cursor: pointer;
+    }
+    
+    .menu_wrapper .menu .head .exit {
+        color: #FEBDAB;
+        cursor: pointer;
+        transition: .5s;
+        height: fit-content;
+    }
+
+    .menu_wrapper .menu .head .exit:hover,
+    .menu_wrapper .menu .head .exit:active {
+        color: var(--color-orange);
+    }
+    
+    .menu_wrapper .menu .navigation {
+        margin-top: 15px;
+    }
+    
+    .menu_wrapper .menu .navigation li {
+        margin-top: 15px;
+    }
+    
+    .menu_wrapper .menu .navigation li a {
+        font-size: 16px;
+        line-height: 22px;
+    }
 }
 
 @media screen and (max-width: 700px) {

@@ -1,33 +1,85 @@
 const btnStart = document.querySelector('#btnStart');
+const btnStop = document.querySelector('#btnStop');
 
 const gameContainer = document.querySelector('#gameContainer');
 
 const countMoves = document.querySelector('#countMoves');
+const timeTimer = document.querySelector('#timeTimer');
 const frameSize = document.querySelector('#frameSize');
+
+const otherSizes = document.querySelector('.otherSize');
 
 class GamePuzzle {
     constructor(size) {
-        this.time = 0;
+        this.time = ['00', '00'];
         this.moves = 0;
-        this.size = size;
+        this.size = 0;
+        this.gameStarted = false;
         this.answer = null;
-        this.setSize();
+        this.timer = {
+            timer: null,
+            timerPause: false
+        }
+        this.setSize(size);
+    }
+
+    checkGame() {
+        if (this.gameStarted || this.timer.timerPause) {
+            return confirm('Are you sure? Result will be lost if You don\'t save it!');
+        } else {
+            return true;
+        }
     }
 
     start() {
-
+        if (!this.gameStarted) {
+            this.startTimer();
+            this.gameStarted = true;
+        }
     }
 
-    setSize() {
+    stop() {
+        if (this.gameStarted) {
+            this.stopTimer();
+            this.gameStarted = false;
+        }
+    }
+
+    startTimer() {
+        this.timer.timerPause = false;
+        this.timer.timer = setInterval(() => {
+            this.time[1] = Number(this.time[1]) + 1;
+            if (this.time[1] === 60) {
+                this.time[0] = Number(this.time[0]) + 1;
+                this.time[1] = 0;
+                if (this.time[0] < 10) {
+                    this.time[0] = '0' + this.time[0];
+                }
+            }
+            if (this.time[1] < 10) {
+                this.time[1] = '0' + this.time[1];
+            }
+            timeTimer.innerHTML = this.time.join(':');
+        }, 1000);
+    }
+
+    stopTimer() {
+        clearInterval(this.timer.timer);
+        this.timer.timerPause = true;
+    }
+
+    setSize(size) {
+
         function shuffle(array) {
             array.sort(() => Math.random() - 0.5);
         }
 
-        const size = this.size;
+        this.size = size;
 
         const sizeText = `${size}x${size}`;
         gameContainer.className = 'game _' + sizeText;
         frameSize.innerHTML = sizeText;
+        timeTimer.innerHTML = this.time.join(':');
 
         let puzzles = [];
         const countPuzzles = Math.pow(size, 2) + 1;
@@ -50,5 +102,20 @@ document.addEventListener('click', e => {
         case btnStart:
             game.start();
             break;
+        case btnStop:
+            game.stop();
+            break;
+    }
+})
+
+otherSizes.addEventListener('click', e => {
+    if (e.target.localName === 'a') {
+        const size = Number(e.target.getAttribute('size'));
+        if (size !== game.size) {
+            if (game.checkGame()) {
+                game.stopTimer();
+                game = new GamePuzzle(size);
+            }
+        }
     }
 })

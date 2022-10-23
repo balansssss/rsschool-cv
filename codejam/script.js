@@ -13,13 +13,17 @@ function getEmptyPuzzle() {
     return gameContainer.querySelector('#emptyPuzzle');
 }
 
+function getPuzzles() {
+    return gameContainer.querySelectorAll('.puzzle');
+}
+
 class GamePuzzle {
     constructor(size) {
         this.time = ['00', '00'];
         this.moves = 0;
         this.size = 0;
         this.gameStarted = false;
-        this.answer = null;
+        this.answer = '';
         this.timer = {
             timer: null,
             timerPause: false
@@ -32,6 +36,19 @@ class GamePuzzle {
             return confirm('Are you sure? Result will be lost if You don\'t save it!');
         } else {
             return true;
+        }
+    }
+
+    checkResult() {
+        const puzzles = getPuzzles();
+        let resPuzzles = '';
+        for (let i = 0; i < puzzles.length; i++) {
+            resPuzzles += Boolean(puzzles[i].innerHTML) ? puzzles[i].innerHTML : 'empty';
+        }
+        if (this.answer === resPuzzles) {
+            alert('Yoy are win');
+            this.stop();
+            game = new GamePuzzle(this.size);
         }
     }
 
@@ -93,23 +110,49 @@ class GamePuzzle {
                 puzzles.push(`<div class="puzzle empty" id="emptyPuzzle"></div>`);
             } else {
                 puzzles.push(`<div class="puzzle">${i}</div>`);
+                this.answer += i;
             }
         }
+        this.answer += 'empty';
         shuffle(puzzles);
         gameContainer.innerHTML = puzzles.join('');
     }
 
     movePuzzle(chosedPuzzle, emptyPuzzle) {
         if (this.gameStarted) {
-            emptyPuzzle.classList.remove('empty');
-            emptyPuzzle.innerHTML = chosedPuzzle.innerHTML;
-            emptyPuzzle.id = null;
-            chosedPuzzle.classList.add('empty');
-            chosedPuzzle.innerHTML = '';
-            chosedPuzzle.id = 'emptyPuzzle';
+            const puzzles = getPuzzles();
+            const puzzlesMatrix = [];
+            let cur = 0;
+            let index = null;
+            for (let i = 0; i < puzzles.length / this.size; i++) {
+                puzzlesMatrix.push([]);
+                for (let j = 0; j < puzzles.length / this.size; j++) {
+                    puzzlesMatrix[i].push(puzzles[cur]);
+                    if (puzzles[cur] === emptyPuzzle) {
+                        index = [i, j];
+                    }
+                    cur += 1;
+                }
+            }
 
-            this.moves += 1;
-            countMoves.innerHTML = this.moves;
+            const left = puzzlesMatrix[index[0]][index[1] - 1] || null;
+            const right = puzzlesMatrix[index[0]][index[1] + 1] || null;
+            const top = puzzlesMatrix[index[0] - 1] ? puzzlesMatrix[index[0] - 1][index[1]] : null;
+            const down = puzzlesMatrix[index[0] + 1] ? puzzlesMatrix[index[0] + 1][index[1]] : null;
+
+            if (chosedPuzzle === left || chosedPuzzle === right || chosedPuzzle === top || chosedPuzzle === down) {
+                emptyPuzzle.classList.remove('empty');
+                emptyPuzzle.innerHTML = chosedPuzzle.innerHTML;
+                emptyPuzzle.id = null;
+                chosedPuzzle.classList.add('empty');
+                chosedPuzzle.innerHTML = '';
+                chosedPuzzle.id = 'emptyPuzzle';
+
+                this.moves += 1;
+                countMoves.innerHTML = this.moves;
+
+                this.checkResult();
+            }
         } else {
             alert('Game doesn\'t running');
         }
@@ -118,15 +161,12 @@ class GamePuzzle {
 
 let game = new GamePuzzle(3);
 
-document.addEventListener('click', e => {
-    switch (e.target) {
-        case btnStart:
-            game.start();
-            break;
-        case btnStop:
-            game.stop();
-            break;
-    }
+btnStart.addEventListener('click', e => {
+    game.start();
+});
+
+btnStop.addEventListener('click', e => {
+    game.stop();
 });
 
 otherSizes.addEventListener('click', e => {
@@ -143,7 +183,10 @@ otherSizes.addEventListener('click', e => {
 
 gameContainer.addEventListener('click', e => {
     const emptyPuzzle = getEmptyPuzzle();
+    //console.log(e.target)
     if (e.target !== emptyPuzzle) {
         game.movePuzzle(e.target, emptyPuzzle);
+    } else {
+        return;
     }
 });

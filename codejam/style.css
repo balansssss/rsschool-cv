@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(120deg, #b5d1ff 0%, #c2e9fb 100%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .info {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.header .info > div{
+    margin: 0 5px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button {
+    color: #ffffff;
+    padding: 5px 10px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+button.sound.on {
+    background-color: rgb(182, 255, 162);
+}
+
+button.sound.off {
+    background-color: rgb(255, 165, 162);
+}
+
+button:hover {
+    background-color: rgb(19, 255, 113)!important;
+} 
+
+button.blue {
+    background-color: rgb(76, 96, 245);
+}
+
+button.grey {
+    background-color: rgb(83, 83, 83);
+}
+
+.game {
+    display: grid;
+}
+
+.game._3x3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.game._4x4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.game._5x5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.game._6x6 {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.game._7x7 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.game._8x8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.game .puzzle {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(176, 176, 176);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.game .puzzle:hover {
+    color: rgb(76, 96, 245);
+}
+
+.game .puzzle.empty {
+    background-color: rgb(176, 176, 176);   
+    cursor: auto;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer > div {
+    margin-top: 10px;
+}
+
+.footer .otherSize .sizes a { 
+    color: rgb(76, 96, 245);
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.results {
+    z-index: 2;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(120deg, #b5d1ff 0%, #c2e9fb 100%);
+    animation: show forwards .5s;
+    flex-direction: column;
+}
+
+.results.hide {
+    display: none;
+}
+
+.results table {
+    text-align: center;
+}
+
+.results table th, 
+.results table td {
+    border: 1px solid #000000;
+    padding: 2px 8px;
+}
+
+.results .btnHideRes {
+    background-color: rgb(255, 165, 162); 
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 510px) {
+    .game .puzzle {
+        width: 35px;
+        height: 35px;
+    }
+}

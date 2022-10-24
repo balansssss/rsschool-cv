@@ -9,6 +9,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(120deg, #b5d1ff 0%, #c2e9fb 100%);
 }
 
 .container {
@@ -43,6 +44,14 @@ button {
     padding: 5px 10px;
     margin: 0 5px;
     transition: 0.3s;
+}
+
+button.sound.on {
+    background-color: rgb(182, 255, 162);
+}
+
+button.sound.off {
+    background-color: rgb(255, 165, 162);
 }
 
 .buttons button:hover {

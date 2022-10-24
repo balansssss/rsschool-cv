@@ -5,6 +5,7 @@ document.body.innerHTML = '<div class="container"> \
         <button id="btnStop" class="grey">Stop</button> \
         <button id="btnSave" class="blue">Save</button> \
         <button id="btnResults" class="blue">Results</button> \
+        <button id="btnSound" class="sound on">Sound On</button> \
     </div> \
     <div class="info"> \
         <div class="moves"> \
@@ -46,13 +47,18 @@ document.body.innerHTML = '<div class="container"> \
         </span> \
     </div> \
 </div> \
-</div>';
+</div> \
+<div class="results"> \
+    \
+</div > ';
 
 const userName = prompt('Hello! What\'s your name? It\'s need for save result!');
 
 const btnStart = document.querySelector('#btnStart');
 const btnStop = document.querySelector('#btnStop');
 const btnSave = document.querySelector('#btnSave');
+const btnSound = document.querySelector('#btnSound');
+const btnResults = document.querySelector('#btnResults');
 
 const gameContainer = document.querySelector('#gameContainer');
 
@@ -69,6 +75,9 @@ function getEmptyPuzzle() {
 function getPuzzles() {
     return gameContainer.querySelectorAll('.puzzle');
 }
+
+const sound = new Audio('./assets/sound/inecraft_damage.mp3');
+let playSound = true;
 
 class GamePuzzle {
     constructor(size, user, moves = 0, time = ['00', '00']) {
@@ -238,6 +247,10 @@ class GamePuzzle {
             const down = puzzlesMatrix[index[0] + 1] ? puzzlesMatrix[index[0] + 1][index[1]] : null;
 
             if (chosedPuzzle === left || chosedPuzzle === right || chosedPuzzle === top || chosedPuzzle === down) {
+                if (playSound) {
+                    sound.play();
+                }
+
                 emptyPuzzle.classList.remove('empty');
                 emptyPuzzle.innerHTML = chosedPuzzle.innerHTML;
                 emptyPuzzle.id = null;
@@ -269,6 +282,18 @@ btnStop.addEventListener('click', () => {
 btnSave.addEventListener('click', () => {
     game.saveGame();
 })
+
+btnSound.addEventListener('click', () => {
+    if (btnSound.className === 'sound on') {
+        playSound = false;
+        btnSound.className = 'sound off';
+        btnSound.innerHTML = 'Sound Off';
+    } else {
+        playSound = true;
+        btnSound.className = 'sound on';
+        btnSound.innerHTML = 'Sound On';
+    }
+});
 
 otherSizes.addEventListener('click', e => {
     if (e.target.localName === 'a') {

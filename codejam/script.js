@@ -141,6 +141,7 @@ class GamePuzzle {
                 moves: this.moves
             });
             window.localStorage.setItem('results', JSON.stringify(curRes));
+            window.localStorage.removeItem(this.user + '_' + this.size);
             game = new GamePuzzle(this.size, userName);
         }
     }

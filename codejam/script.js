@@ -1,5 +1,58 @@
+document.body.innerHTML = '<div class="container"> \
+<div class="header"> \
+    <div class="buttons"> \
+        <button id="btnStart" class="blue">Shuffle and start</button> \
+        <button id="btnStop" class="grey">Stop</button> \
+        <button id="btnSave" class="blue">Save</button> \
+        <button id="btnResults" class="blue">Results</button> \
+    </div> \
+    <div class="info"> \
+        <div class="moves"> \
+            <span class="title">Moves:</span> \
+            <span id="countMoves">0</span> \
+        </div> \
+        <div class="time"> \
+            <span class="title">Times:</span> \
+            <span id="timeTimer">00:00</span> \
+        </div> \
+    </div> \
+</div> \
+<div id="gameContainer" class="game"> \
+</div> \
+<div class="footer"> \
+    <div class="frameSize"> \
+        <span class="title">Frame size:</span> \
+        <span id="frameSize">4x4</span> \
+    </div> \
+    <div class="otherSize"> \
+        <span class="title">Other sizes:</span> \
+        <span class="sizes"> \
+            <a href="#3" size="3">3x3</a> \
+        </span> \
+        <span class="sizes"> \
+            <a href="#4" size="4">4x4</a> \
+        </span> \
+        <span class="sizes"> \
+            <a href="#5" size="5">5x5</a> \
+        </span> \
+        <span class="sizes"> \
+            <a href="#6" size="6">6x6</a> \
+        </span> \
+        <span class="sizes"> \
+            <a href="#7" size="7">7x7</a> \
+        </span> \
+        <span class="sizes"> \
+            <a href="#8" size="8">8x8</a> \
+        </span> \
+    </div> \
+</div> \
+</div>';
+
+const userName = prompt('Hello! What\'s your name? It\'s need for save result!');
+
 const btnStart = document.querySelector('#btnStart');
 const btnStop = document.querySelector('#btnStop');
+const btnSave = document.querySelector('#btnSave');
 
 const gameContainer = document.querySelector('#gameContainer');
 
@@ -18,9 +71,10 @@ function getPuzzles() {
 }
 
 class GamePuzzle {
-    constructor(size) {
-        this.time = ['00', '00'];
-        this.moves = 0;
+    constructor(size, user, moves = 0, time = ['00', '00']) {
+        this.user = user;
+        this.time = time;
+        this.moves = moves;
         this.size = 0;
         this.gameStarted = false;
         this.answer = '';
@@ -46,10 +100,50 @@ class GamePuzzle {
             resPuzzles += Boolean(puzzles[i].innerHTML) ? puzzles[i].innerHTML : 'empty';
         }
         if (this.answer === resPuzzles) {
-            alert('Yoy are win');
+            alert(`Hooray! You solved the puzzle in ${this.time.join(':')} and ${this.moves} moves!`);
             this.stop();
-            game = new GamePuzzle(this.size);
+            game = new GamePuzzle(this.size, userName);
         }
+    }
+
+    saveGame() {
+        if (this.gameStarted || this.timer.timerPause) {
+            const game = [];
+            const puzzles = getPuzzles();
+            for (let i = 0; i < puzzles.length; i++) {
+                game.push(puzzles[i].innerHTML);
+            }
+            window.localStorage.setItem(this.user + '_' + this.size, JSON.stringify({
+                time: this.time,
+                moves: this.moves,
+                game
+            }));
+            alert('Data save!');
+        } else {
+            alert('Nothing to save');
+        }
+    }
+
+    loadGame(size) {
+        const loadResult = JSON.parse(window.localStorage.getItem(this.user + '_' + size));
+        if (loadResult) {
+            const loadGame = confirm('Do you want to load saved game?');
+            if (loadGame) {
+                this.moves = loadResult.moves;
+                this.time = loadResult.time;
+                let puzzles = [];
+                for (let i = 0; i < loadResult.game.length; i++) {
+                    if (loadResult.game[i] === '') {
+                        puzzles.push(`<div class="puzzle empty" id="emptyPuzzle"></div>`);
+                    } else {
+                        puzzles.push(`<div class="puzzle">${loadResult.game[i]}</div>`);
+                    }
+                }
+                gameContainer.innerHTML = puzzles.join('');
+                return true;
+            }
+        }
+        return false;
     }
 
     start() {
@@ -96,6 +190,7 @@ class GamePuzzle {
         }
 
         this.size = size;
+        const gameLoad = this.loadGame(size);
 
         const sizeText = `${size}x${size}`;
         gameContainer.className = 'game _' + sizeText;
@@ -103,19 +198,21 @@ class GamePuzzle {
         timeTimer.innerHTML = this.time.join(':');
         countMoves.innerHTML = this.moves;
 
-        let puzzles = [];
-        const countPuzzles = Math.pow(size, 2) + 1;
-        for (let i = 1; i < countPuzzles; i++) {
-            if (i === countPuzzles - 1) {
-                puzzles.push(`<div class="puzzle empty" id="emptyPuzzle"></div>`);
-            } else {
-                puzzles.push(`<div class="puzzle">${i}</div>`);
-                this.answer += i;
+        if (!gameLoad) {
+            let puzzles = [];
+            const countPuzzles = Math.pow(size, 2) + 1;
+            for (let i = 1; i < countPuzzles; i++) {
+                if (i === countPuzzles - 1) {
+                    puzzles.push(`<div class="puzzle empty" id="emptyPuzzle"></div>`);
+                } else {
+                    puzzles.push(`<div class="puzzle">${i}</div>`);
+                    this.answer += i;
+                }
             }
+            this.answer += 'empty';
+            shuffle(puzzles);
+            gameContainer.innerHTML = puzzles.join('');
         }
-        this.answer += 'empty';
-        shuffle(puzzles);
-        gameContainer.innerHTML = puzzles.join('');
     }
 
     movePuzzle(chosedPuzzle, emptyPuzzle) {
@@ -154,36 +251,37 @@ class GamePuzzle {
                 this.checkResult();
             }
         } else {
-            alert('Game doesn\'t running');
+            alert('Game doesn\'t running! Start game!');
         }
     }
 }
 
-let game = new GamePuzzle(3);
+let game = new GamePuzzle(3, userName);
 
-btnStart.addEventListener('click', e => {
+btnStart.addEventListener('click', () => {
     game.start();
 });
 
-btnStop.addEventListener('click', e => {
+btnStop.addEventListener('click', () => {
     game.stop();
 });
+
+btnSave.addEventListener('click', () => {
+    game.saveGame();
+})
 
 otherSizes.addEventListener('click', e => {
     if (e.target.localName === 'a') {
         const size = Number(e.target.getAttribute('size'));
-        if (size !== game.size) {
-            if (game.checkGame()) {
-                game.stopTimer();
-                game = new GamePuzzle(size);
-            }
+        if (game.checkGame()) {
+            game.stopTimer();
+            game = new GamePuzzle(size, userName);
         }
     }
 });
 
 gameContainer.addEventListener('click', e => {
     const emptyPuzzle = getEmptyPuzzle();
-    //console.log(e.target)
     if (e.target !== emptyPuzzle) {
         game.movePuzzle(e.target, emptyPuzzle);
     } else {

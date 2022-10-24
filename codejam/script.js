@@ -47,9 +47,10 @@ document.body.innerHTML = '<div class="container"> \
         </span> \
     </div> \
 </div> \
-</div> \
-<div class="results"> \
-    \
+<div id="dvRes" class="results hide"> \
+    <table id="tblRes"></table> \
+    <button id="btnHideRes" class="btnHideRes">Close</button> \
+</div > \
 </div > ';
 
 const userName = prompt('Hello! What\'s your name? It\'s need for save result!');
@@ -59,8 +60,11 @@ const btnStop = document.querySelector('#btnStop');
 const btnSave = document.querySelector('#btnSave');
 const btnSound = document.querySelector('#btnSound');
 const btnResults = document.querySelector('#btnResults');
+const btnHideRes = document.querySelector('#btnHideRes');
 
 const gameContainer = document.querySelector('#gameContainer');
+const tblRes = document.querySelector('#tblRes');
+const dvRes = document.querySelector('#dvRes');
 
 const countMoves = document.querySelector('#countMoves');
 const timeTimer = document.querySelector('#timeTimer');
@@ -74,6 +78,20 @@ function getEmptyPuzzle() {
 
 function getPuzzles() {
     return gameContainer.querySelectorAll('.puzzle');
+}
+
+function getResults() {
+    const results = JSON.parse(window.localStorage.getItem('results'));
+    const max = results.length > 10 ? 10 : results.length;
+    results.sort((a, b) => Number(a.score) - Number(b.score));
+
+    let resTd = '<thead><tr><th>№</th><th>User</th><th>Size</th><th>Moves</th><th>Time</th></tr></thead><tbody>';
+    for (let i = 0; i < max; i++) {
+        resTd += `<tr><td>${i + 1}</td><td>${results[i].user}</td><td>${results[i].size}</td><td>${results[i].moves}</td><td>${results[i].time.join(':')}</td></tr>`;
+    }
+    resTd += '</tbody>';
+    tblRes.innerHTML = resTd;
+    dvRes.classList.remove('hide');
 }
 
 const sound = new Audio('./assets/sound/inecraft_damage.mp3');
@@ -111,6 +129,18 @@ class GamePuzzle {
         if (this.answer === resPuzzles) {
             alert(`Hooray! You solved the puzzle in ${this.time.join(':')} and ${this.moves} moves!`);
             this.stop();
+            let curRes = JSON.parse(window.localStorage.getItem("results"));
+            if (!curRes) {
+                curRes = [];
+            }
+            curRes.push({
+                user: this.user,
+                time: this.time,
+                size: this.size,
+                score: (Number(this.time[0]) * 60 + Number(this.time[1])) * this.moves,
+                moves: this.moves
+            });
+            window.localStorage.setItem('results', JSON.stringify(curRes));
             game = new GamePuzzle(this.size, userName);
         }
     }
@@ -207,18 +237,19 @@ class GamePuzzle {
         timeTimer.innerHTML = this.time.join(':');
         countMoves.innerHTML = this.moves;
 
-        if (!gameLoad) {
-            let puzzles = [];
-            const countPuzzles = Math.pow(size, 2) + 1;
-            for (let i = 1; i < countPuzzles; i++) {
-                if (i === countPuzzles - 1) {
-                    puzzles.push(`<div class="puzzle empty" id="emptyPuzzle"></div>`);
-                } else {
-                    puzzles.push(`<div class="puzzle">${i}</div>`);
-                    this.answer += i;
-                }
+
+        let puzzles = [];
+        const countPuzzles = Math.pow(size, 2) + 1;
+        for (let i = 1; i < countPuzzles; i++) {
+            if (i === countPuzzles - 1) {
+                puzzles.push(`<div class="puzzle empty" id="emptyPuzzle"></div>`);
+            } else {
+                puzzles.push(`<div class="puzzle">${i}</div>`);
+                this.answer += i;
             }
-            this.answer += 'empty';
+        }
+        this.answer += 'empty';
+        if (!gameLoad) {
             shuffle(puzzles);
             gameContainer.innerHTML = puzzles.join('');
         }
@@ -269,7 +300,7 @@ class GamePuzzle {
     }
 }
 
-let game = new GamePuzzle(3, userName);
+let game = new GamePuzzle(4, userName);
 
 btnStart.addEventListener('click', () => {
     game.start();
@@ -293,6 +324,12 @@ btnSound.addEventListener('click', () => {
         btnSound.className = 'sound on';
         btnSound.innerHTML = 'Sound On';
     }
+});
+
+btnResults.addEventListener('click', getResults);
+
+btnHideRes.addEventListener('click', () => {
+    dvRes.classList.add('hide');
 });
 
 otherSizes.addEventListener('click', e => {

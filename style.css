@@ -7,7 +7,7 @@
 }
 
 body {
-    background: url("/img/back.png");
+    background: url("./img/back.png");
 }
 
 ul {

@@ -1,0 +1,171 @@
+:root {
+    --cl-blue: #00a1e6;
+    --cl-dark-blue: #003786;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: .3s;
+    color: var(--cl-dark-blue);
+}
+
+a:hover {
+    color: var(--cl-blue)!important;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    background-color: var(--cl-blue);
+    transition: .3s;
+    padding: 10px 15px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cl-dark-blue);
+}
+
+.--cl-blue {
+    color: var(--cl-blue);
+}
+
+/*Header*/
+
+.container {
+    margin: 0 50px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.header__logo {
+    width: 60px;
+    height: 60px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav__item {
+    margin: 0 10px;
+}
+
+.nav__item:last-child {
+    margin-right: 0;
+}
+
+
+/*Footer*/
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer__link {
+    color: var(--cl-dark-blue);
+}
+
+.school-logo {
+    width: 80px;
+
+}
+
+/* Page */
+
+.main-page {
+    display: flex;
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.main-page__img {
+    margin-top: 50px;
+    max-width: 600px;
+    height: auto;
+    animation: slideDown forwards 1.5s;
+    opacity: 0;
+}
+
+.main-page__title {
+    font-size: 36px;
+    margin-top: 20px;
+    animation: slideDown forwards 1.5s;
+    animation-delay: 0.2s;
+    opacity: 0;
+}
+
+.main-page__description {
+    max-width: 250px;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    animation: slideDown forwards 1.5s;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.main-page__btn {
+    animation: slideDown forwards 1.5s;
+    animation-delay: 0.4s;
+    opacity: 0;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 650px) {
+    .container {
+        margin: 0 30px;
+    }
+
+    .main-page__img {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .container {
+        margin: 0 10px;
+    }
+
+    .main-page__img {
+        max-width: 300px;
+    }
+}

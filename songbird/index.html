@@ -24,7 +24,7 @@
             </ul>    
         </header>
 
-        <main class="main main-page">
+        <!--<main class="main main-page">
             <img src="./assets/img/background.png" 
                 alt="Birds"
                 class="main-page__img">
@@ -34,7 +34,52 @@
                 Проверьте себя в знании голосов птиц. 
                 Пройдите тест до конца, чтобы узнать вашу оценку.
             </span>
-            <button class="main-page__btn">Начать викторину</button>
+            <button class="main-page__btn" id="startQuiz">Начать викторину</button>
+        </main>-->
+
+        <main class="main quiz-page">
+            <div class="quiz-page__result">
+                <span>Результат: </span>
+                <span>0</span>
+            </div>
+            <ul class="quiz-page__nav">
+                <li class="quiz-page__nav__item active">Разминка</li>
+                <li class="quiz-page__nav__item">Воробьиные</li>
+                <li class="quiz-page__nav__item">Лесные птицы</li>
+                <li class="quiz-page__nav__item">Певчие птицы</li>
+                <li class="quiz-page__nav__item">Хищные птицы</li>
+                <li class="quiz-page__nav__item">Морские птицы</li>
+            </ul>
+            <div class="quiz-page__player">
+
+            </div>
+            <div class="quiz-page__quiz-wrapper">
+                <ul class="quiz-page__quiz">
+                    <li class="quiz-page__quiz__item" status="false">Ворон</li>
+                    <li class="quiz-page__quiz__item toched" status="false">Ворон</li>
+                    <li class="quiz-page__quiz__item toched" status="true">Ворон</li>
+                    <li class="quiz-page__quiz__item" status="false">Ворон</li>
+                    <li class="quiz-page__quiz__item" status="false">Ворон</li>
+                    <li class="quiz-page__quiz__item" status="false">Ворон</li>
+                </ul>
+                <div class="quiz-page__info">
+                    <!--Послушайте плеер.<br>
+                    Выберите птицу из списка -->
+                    <div class="quiz-page__info item-media">
+                        <img src="https://live.staticflickr.com//65535//49298804222_474cfe8682.jpg"
+                            class="item-media__image">
+                        <div class="item-media__info">
+                            <h2 class="item-media__info__title">Ворон</h2>
+                            <span class="item-media__info__desc">Corvus corax</span>
+                        </div>    
+                    </div>   
+                    <div class="quiz-page__info__text">
+                        Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.
+                    </div>
+                </div>
+            </div>
+
+            <button class="quiz-page__next">Дальше</button>
         </main>
 
         <footer class="footer">
@@ -43,9 +88,10 @@
                     alt="RSS School"
                     class="school-logo">
             </a>
-            <a href="https://github.com/balansssss" class="footer__link">Created by balansssss</a> 
+            <a href="https://github.com/balansssss" class="footer__link author">Created by balansssss</a> 
             <span class="footer__link">2022</span>
         </footer>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

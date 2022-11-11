@@ -106,7 +106,7 @@ button:hover {
 /* Page */
 
 .main {
-    height: 80vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,10 +172,6 @@ button:hover {
 
 .quiz-page__result {
     font-size: 18px;
-}
-
-.quiz-page {
-    
 }
 
 .quiz-page__nav {
@@ -292,6 +288,20 @@ button:hover {
 
 .item-media__info__desc {
     margin-top: 5px;
+}
+
+.quiz-page__player {
+    margin-top: 20px;
+    display: flex;
+}
+
+.player__audio {
+    width: 100%;
+}
+
+audio::-webkit-media-controls-enclosure {
+    border-radius: 4px;
+    background-color:var(--cl-blue);
 }
 
 @media screen and (max-width: 780px) {

@@ -110,6 +110,12 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    display: none;
+    width: 90vw;
+}
+
+.main.active {
+    display: flex;
 }
 
 .main-page {
@@ -168,6 +174,10 @@ button:hover {
     animation-delay: 0.4s;
     opacity: 0;
     margin-top: 20px;
+}
+
+.quiz-page {
+    animation: fade forwards 1.5s;
 }
 
 .quiz-page__result {
@@ -372,4 +382,12 @@ audio::-webkit-media-controls-enclosure {
     .main-page__img {
         max-width: 300px;
     }
+
+    .school-logo {
+        width: 50px;
+    }
+
+    .footer__link.author {
+        transform: none;
+    }    
 }

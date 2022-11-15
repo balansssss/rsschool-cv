@@ -1,6 +1,7 @@
 :root {
     --cl-blue: #00a1e6;
     --cl-dark-blue: #003786;
+    --cl-native-blue: #5899f5;
     --cl-white: #ffffff;
     --cl-green: #00e664;
     --cl-red: #e6002e;
@@ -57,7 +58,9 @@ button:disabled {
 
 .container {
     margin: 0 50px;
-    max-width: 1300px;
+    max-width: 1500px;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 .header {
@@ -115,7 +118,6 @@ button:disabled {
     flex-direction: column;
     justify-content: center;
     display: none;
-    width: 82vw;
 }
 
 .main.active {
@@ -306,6 +308,16 @@ button:disabled {
     margin-top: 5px;
 }
 
+.item-media__info__audio {
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.item-media__info__audio::-webkit-media-controls-enclosure {
+    background-color: var(--cl-native-blue);
+}
+
 .quiz-page__player {
     margin-top: 20px;
     display: flex;
@@ -337,6 +349,10 @@ audio::-webkit-media-controls-enclosure {
 .result-page__res__count {
     display: inline;
     font-size: 26px;
+}
+
+.result-page__restart {
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 780px) {

@@ -2,6 +2,7 @@ import { birdsData } from "./data/data.js";
 
 const btnStartQuiz = document.querySelector('#startQuiz');
 const btnNextQuestion = document.querySelector('#nextQuestion');
+const btnRestartQuiz = document.querySelector('#btnRestartQuiz');
 
 const pages = document.querySelectorAll('main.main');
 
@@ -100,6 +101,7 @@ function getAnswerInfo(answerId) {
         <div class="item-media__info">
             <h2 class="item-media__info__title">${answer.name}</h2>
             <span class="item-media__info__desc">${answer.species}</span>
+            <audio class="item-media__info__audio" controls src="${answer.audio}">
         </div>    
     </div>   
     <div class="quiz-page__info__text">
@@ -139,4 +141,8 @@ quizAnswers.addEventListener('click', e => {
 
 btnNextQuestion.addEventListener('click', () => {
     prepNextQuestion();
+});
+
+btnRestartQuiz.addEventListener('click', () => {
+    goToPage('quiz-page');
 });

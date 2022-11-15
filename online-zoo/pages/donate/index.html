@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/fonts/fonts.css">
+    <link rel="stylesheet" href="../../assets/styles/main.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>PetStory Donate</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1 style="display: none;">PetStory online</h1>
+            <a href="../main/index.html">
+                <img class="logo_desktop" src="../../assets/img/logo_footer.png" alt="Logo">
+                <img class="logo_small" src="../../assets/img/logo_small.png" alt="Logo">
+            </a>
+        </div>    
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div> 
+        <nav class="navigation">
+            <ul>
+                <li><a href="../main/index.html">About</a></li>
+                <li><a href="#">Map</a></li>
+                <li><a href="#">Zoos</a></li>
+                <li><a class="active" href="">Donate</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="designed">
+            <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online">Designed by &copy;</a>
+        </div>
+    </header>
+
+    <section class="main"></section>
+
+    <section class="donation">
+        <h2 class="title">THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!</h2>
+        <p class="describe">Even though the Zoo has been able to reopen, we are at a greatly reduced capacity with educational programs and public and private events cancelled or postponed for additional months. We need you now more than ever to help ensure that we overcome these challenges. We have been actively raising funds in the community, and we are grateful for the generosity.  But much more support is still needed, and we need your help! Please consider a gift today – no matter what size – to help us sustain our mission.</p>
+        <p class="title donate">Donation Information</p>
+        <div class="wrapper">
+            <h2 class="title">Pick and feed a friend</h2>
+            <p class="describe">We know the animals bring you joy, and in these extraordinary times, we’re glad.</p>
+            <div class="animal">
+                <div class="count">
+                    <p class="number">4</p>
+                    <p class="text">Panda diet for the day.</p>
+                </div>
+                <img class="xicon" src="../../assets/img/donate/x_icon.png" alt="X-Icon">
+                <img class="animal_img" src="../../assets/img/donate/widget/panda_widget.png" alt="Panda">
+            </div>
+            <form>
+                <p class="title">Amount</p>
+                <div class="progressbar">
+                    <div class="line">
+                        <div class="point" data-amount="5000">
+                            <img id="p5000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point" data-amount="2000">
+                            <img id="p2000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point" data-amount="1000">
+                            <img id="p1000" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point" data-amount="500">
+                            <img id="p500" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point" data-amount="250">
+                            <img id="p250" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point checked" data-amount="100">
+                            <img id="p100" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point" data-amount="50">
+                            <img id="p50" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                        <div class="point" data-amount="25">
+                            <img id="p25" class="radio_img" src="../../assets/img/donate/radio.png" alt="Radio">
+                        </div>
+                    </div>
+                </div>
+                <div class="progressbar_prices">
+                    <p class="price" data-img="p5000">$5000</p>
+                    <p class="price" data-img="p2000">$2000</p>
+                    <p class="price" data-img="p1000">$1000</p>
+                    <p class="price" data-img="p500">$500</p>
+                    <p class="price" data-img="p250">$250</p>
+                    <p class="price" data-img="p100">$100</p>
+                    <p class="price" data-img="p50">$50</p>
+                    <p class="price" data-img="p25">$25</p>
+                </div>
+                <input class="amount" autocomplete="off" id="amount" type="number" placeholder="Another amount" min="1" max="9999" reqiured>
+                <span class="amount_symbol">$</span>
+                <div class="radio_container">
+                    <input type="radio" id="monthly" name="period" value="Monthly">
+                    <label for="monthly">Monthly</label>
+                    <input type="radio" id="once" name="period" value="Once" checked>
+                    <label for="once">Once</label>
+                </div>
+                <button class="btn_main feed">Feed a friend now</button>
+            </form>
+            <p class="share">Share with your friends on social networks </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="head">
+            <div class="logo">
+                <a href="../main/index.html">
+                    <img class="main_logo" src="../../assets/img/logo_footer.png" alt="Logo">
+                    <img class="mobile_logo" src="../../assets/img/logo_footer_mobile.png" alt="Logo">
+                </a>
+            </div>
+            <div class="subscribe">
+                <p class="text">Subscribe to our news</p>
+                <form id="subscribeForm">
+                    <input id="iEmail" class="input_email" type="email" placeholder="Enter your email" required>
+                    <input id="iSubmit" class="submit default" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <form class="donate" action="../donates/index.html" target="_blank">
+            <button class="btn_square">donate for volunteers</button>
+        </form>
+        <div class="foot">
+            <ul class="social">
+                <li>
+                    <div class="icon">
+                        <img src="../../assets/img/footer/facebook.png" alt="Facebook">
+                    </div>
+                    <a class="social_link" href="https://www.facebook.com/">Facebook</a>
+                </li>
+                <li>
+                    <div class="icon">
+                        <img src="../../assets/img/footer/twitter.png" alt="Twitter">
+                    </div>
+                    <a class="social_link" href="https://twitter.com/">Twitter</a>
+                </li>
+                <li>
+                    <div class="icon">
+                        <img src="../../assets/img/footer/insta.png" alt="Instagram">
+                    </div>
+                    <a class="social_link" href="https://www.instagram.com/">Instagram</a>
+                </li>
+                <li>
+                    <div class="icon">
+                        <img src="../../assets/img/footer/youtube.png" alt="YouTube">
+                    </div>
+                    <a class="social_link" href="https://www.youtube.com/">YouTube</a>
+                </li>
+            </ul>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../main/index.html">About</a></li>
+                    <li><a href="#">Map</a></li>
+                    <li><a href="#">Zoos</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="designed">
+                <p>Designed by Alisa Samborskaya</p>
+                <p>©RSSchool & ©Yem Digital 2021</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="menuWrapper" class="menu_wrapper" style="display: none;">
+        <div class="menu" id="menu">
+            <div class="head">
+                <a href="../main/index.html">
+                    <img class="logo_menu" src="../../assets/img/logo_menu.png" alt="Logo">
+                </a>
+                <div id="hideMenu" class="exit">X</div>
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="../main/index.html">About</a></li>
+                    <li><a href="#">Map</a></li>
+                    <li><a href="#">Zoos</a></li>
+                    <li><a href="../donate/index.html">Donate</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online">Designed by &copy;</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="../../scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="./style.css">
+    <title>Songbird by balansssss</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="./index.html">
+                <img 
+                class="header__logo"    
+                src="./assets/img/logo.png" 
+                alt="Logo"
+                title="Songbird">
+            </a>
+            <ul class="nav" id="nav">
+                <li class="nav__item"><a href="#" linkTo="main-page">Главная</a></li>
+                <li class="nav__item"><a href="#" linkTo="quiz-page">Викторина</a></li>
+            </ul>    
+        </header>
+
+        <main class="main main-page active">
+            <img src="./assets/img/background.png" 
+                alt="Birds"
+                class="main-page__img">
+            <h1 class="main-page__title">Song<span class="--cl-blue">bird</span></h1>
+            <span class="main-page__description">
+                Приложение-викторина для распознавания птиц по их голосам.
+                Проверьте себя в знании голосов птиц. 
+                Пройдите тест до конца, чтобы узнать вашу оценку.
+            </span>
+            <button class="main-page__btn" id="startQuiz">Начать викторину</button>
+        </main>
+
+        <main class="main quiz-page">
+            <div class="quiz-page__result">
+                <span>Результат: </span>
+                <span id="res">0</span>
+            </div>
+            <!--<ul class="quiz-page__nav">
+                <li class="quiz-page__nav__item active">Разминка</li>
+                <li class="quiz-page__nav__item">Воробьиные</li>
+                <li class="quiz-page__nav__item">Лесные птицы</li>
+                <li class="quiz-page__nav__item">Певчие птицы</li>
+                <li class="quiz-page__nav__item">Хищные птицы</li>
+                <li class="quiz-page__nav__item">Морские птицы</li>
+            </ul>-->
+            <div class="quiz-page__player player">
+                <audio controls
+                    id="player"
+                    class="player__audio"
+                    src="https://www.xeno-canto.org/sounds/uploaded/XIQVMQVUPP/XC518684-Grands%20corbeaux%2009012020%20Suzon.mp3">  
+            </div>
+            <div class="quiz-page__quiz-wrapper">
+                <ul class="quiz-page__quiz" id="quizAnswers">   
+                </ul>
+                <div class="quiz-page__info" id="answerInfo">
+                    Послушайте плеер.<br>
+                    Выберите птицу из списка
+                </div>
+            </div>
+
+            <button id="nextQuestion" class="quiz-page__next">Дальше</button>
+        </main>
+
+        <main class="main result-page">
+            <div class="result-page__res">
+                Поздравляю, вы прошли викторину.<br>
+                Ваш результат: <h2 id="resultQuiz" class="result-page__res__count --cl-blue">12</h2>
+            </div>
+            <button id="btnRestartQuiz" class="result-page__restart">Играть еще</button>
+        </main>
+
+        <footer class="footer">
+            <a href="https://rs.school/js/" class="footer__link">
+                <img src="https://rs.school/images/rs_school_js.svg" 
+                    alt="RSS School"
+                    class="school-logo">
+            </a>
+            <a href="https://github.com/balansssss" class="footer__link author">Created by balansssss</a> 
+            <span class="footer__link">2022</span>
+        </footer>
+    </div>
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

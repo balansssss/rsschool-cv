@@ -145,4 +145,4 @@ btnNextQuestion.addEventListener('click', () => {
 
 btnRestartQuiz.addEventListener('click', () => {
     goToPage('quiz-page');
-});
+}); 
